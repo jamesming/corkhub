@@ -1,0 +1,89 @@
+http://www.webdeveloperjuice.com/2010/12/06/15-stylish-gallery-and-photo-effects-using-jquery-shouldnt-be-missed/
+
+http://net.tutsplus.com/html-css-techniques/creating-a-floating-html-menu-using-jquery-and-css/
+
+
+
+http://www.ajaxblender.com/bgstretcher-jquery-stretch-background-plugin.html
+bgStretcher (Background Stretcher) is a jQuery plug-in which allows you to add a large image (or a set of images) to the background of your web page and will proportionally resize the image(s) to fill the entire window area. The plug-in will work as a slideshow if multiple images mode is used (the speed and duration for the slideshow is configurable).
+
+http://tympanus.net/codrops/2010/09/08/full-page-image-gallery/
+
+http://webdesignledger.com/resources/best-jquery-plugins-of-2010
+
+http://www.yoxigen.com/yoxview/
+YoxView is a free Lightbox-type media and image viewer jQuery plugin. It's easy to use and feature-rich.
+
+http://www.ivellios.toron.pl/technikalia/2010/06/22/gvchart-plugin-jquery-with-google-charts/
+gvChart is a plugin for jQuery, that uses Google Charts to create interactive visualization by using data from the HTML table tag. It is easy in use and additionally it allows you to create five types of the charts.
+
+http://daverupert.com/2010/09/lettering-js/
+
+http://www.yuxiyou.net/popSlides/
+popSlides is a jQuery plugin that allows you to easily create lightbox-style image slideshows that floats overtop the web page ( qseudo-popup ).
+
+http://www.fyneworks.com/jquery/CKEditor/
+
+http://validformbuilder.org/
+The ValidForm Builder is a open source PHP and JavaScript library that simplifies the often tedious creation of standards based web forms. Correct field validation of forms is an often overlooked problem and can lead to serious security issues. Building a form and adding validation to it was never that easy!
+
+http://www.dfc-e.com/metiers/multimedia/opensource/jqtransform/
+s an opensource jQuery plugin that helps you to give a stylish look to your form input elements. You can download it packed from here.
+
+
+http://www.position-absolute.com/articles/jquery-form-validator-because-form-validation-is-a-mess/
+
+http://nerd5.com/web-development/10-jquery-plugins-for-good-looking-forms.html
+
+
+
+http://www.queness.com/post/5701/20-really-awesome-javascript-driven-single-page-websites
+
+
+http://creativefan.com/50-way-awesome-jquery-web-design-effects/
+	http://www.charliegentle.co.uk/
+	http://www.yaypaul.com/my/work/
+		http://buildinternet.com/2009/03/sliding-boxes-and-captions-with-jquery/
+		This image gallery tutorial shows you an interesting interaction technique for having captions that slide up to reveal more information about a particular image when the user hovers over it.
+	
+	http://www.goslingo.com/
+	http://www.vrasa.com/#top
+
+http://webdesign.tutsplus.com/tutorials/complete-websites/create-a-clean-and-simple-resume-website-design/ 
+
+
+http://devmoose.com/coding/create-a-sleek-css-button-under-a-minute
+
+
+
+
+
+
+
+http://css-tricks.com/examples/ButtonMaker/#
+
+
+
+
+http://www.madeincima.eu/samples/jquery/easyListSplitter/#
+Easy List Splitter keeps the HTML to the minimum. No unnecessary elements or inline styles are added to the code. You’ll get a clean plain HTML with some classes that you can use as hooks to easily style your lists. Choose whether to order your list items vertically or horizontally. You can then decide whether to modify the default CSS or apply a new one.
+
+
+http://www.bukisa.com/articles/414335_5-useful-jquery-plugins-to-integrate-twitter-into-websites
+
+http://www.steamdev.com/imgr/ - IMGr is a jQuery plugin for rounding image corners. The script utilizes CSS3 in modern web browsers, and VML in Internet Explorer 8 and below.
+
+http://flesler.blogspot.com/2007/10/jqueryscrollto.html Scrollto
+	http://trevordavis.net/play/jquery-one-page-nav/
+	
+	
+	
+	http://www.favicon.cc/
+	
+	
+	
+SELECT table_schema AS 'prospace_db',
+Round( Sum( data_length + index_length ) / 1024 / 1024, 3 ) AS 'Db Size (MB)',
+Round( Sum( data_free ) / 1024 / 1024, 3 ) AS 'Free Space (MB)'
+FROM information_schema.tables
+GROUP BY table_schema ;

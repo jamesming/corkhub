@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="phpDocumentor 1.4.3 http://www.phpdoc.org">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Files">
+		<param name="Local" value="ProspaceBeta\_Tools.php.html">
+		</OBJECT>
+	<UL>
+	
+</UL>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tools.php">
+		<param name="Local" value="ProspaceBeta\_Tools.php.html">
+		</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Classes">
+		<param name="Local" value="ProspaceBeta\Tools.html">
+		</OBJECT>
+	<UL>
+	
+</UL>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tools">
+		<param name="Local" value="ProspaceBeta\Tools.html">
+		</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tools Methods">
+		<param name="Local" value="ProspaceBeta\Tools.html">
+		</OBJECT>
+	<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="browserIsExplorer">
+		<param name="Local" value="ProspaceBeta\Tools.html#methodbrowserIsExplorer">
+		</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="browserIsFireFox">
+		<param name="Local" value="ProspaceBeta\Tools.html#methodbrowserIsFireFox">
+		</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="generateRandStr">
+		<param name="Local" value="ProspaceBeta\Tools.html#methodgenerateRandStr">
+		</OBJECT>
+		
+</UL>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="browserIschrome">
+		<param name="Local" value="ProspaceBeta\Tools.html#methodbrowserIschrome">
+		</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="browserIsExplorer">
+		<param name="Local" value="ProspaceBeta\Tools.html#methodbrowserIsExplorer">
+		</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="browserIsFireFox">
+		<param name="Local" value="ProspaceBeta\Tools.html#methodbrowserIsFireFox">
+		</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="generateRandStr">
+		<param name="Local" value="ProspaceBeta\Tools.html#methodgenerateRandStr">
+		</OBJECT>
+		
+</UL>
+</BODY></HTML>

@@ -1,0 +1,44 @@
+
+
+
+perl jsdoc.pl ..\system\application\views\header\header_document_ready.php
+
+
+
+This configure which pages to include
+
+/PhpDocumentor/docbuilder/config.php
+
+
+C:\Program Files\wamp\www\PhpDocumentor\phpDocumentor\Converters\HTML\frames\templates\default
+
+C:\Program Files\wamp\www\output
+
+HTML:Smarty:PHP
+
+php.exe "C:\Program Files\wamp\www\PhpDocumentor\phpdoc" 
+-t "C:\Program Files\wamp\www\output" -o HTML:default:default 
+-d "C:\Program Files\wamp\www\prospace"
+        
+				if ($this->session->userdata('username')) {
+					$this->user = $this->session->userdata('username');
+				}
+				
+				
+
+				$password = $this->_add_salt("password", $salt = microtime());
+				
+				echo $password;
+
+				$newdata = array(
+				                   'username'  => 'johndoe',
+				                   'password'	 => $password,
+				                   'email'     => 'johndoe@some-site.com',
+				                   'logged_in' => TRUE
+				               );
+				
+				$this->session->set_userdata($newdata);
+				
+				
+				echo '<pre>';print_r(  $this->session->userdata    );echo '</pre>';  exit;
+				*/

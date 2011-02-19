@@ -1,0 +1,488 @@
+<script type="text/javascript" language="Javascript">
+$(document).ready(function() { 
+				
+						var TEST_COOKIE = 'test_cookie';
+				    jQuery.cookie( TEST_COOKIE, true );
+				    if ( jQuery.cookie ( TEST_COOKIE ) )
+				    {
+				      jQuery.cookie( TEST_COOKIE, null );
+				    }
+				    else
+				    {
+							$(".error").slideDown('slow')
+							$(".error td:first-child").html("This site requires the use of cookies to function properly.  Please set your internet options to allow cookies for this website.")
+							setTimeout("$('.warning').slideUp('slow')", 9999999);
+				    }
+				
+
+						setInterval(function() {
+						 // $('#mainContainer').load('/app/_mainContainerDailyDeal.php?randval='+ Math.random());
+					  }, 1000);
+
+				
+						if( $('#isLoggedIn').val()==1 &&  $('#isLoggedInToFB').val()==1 ){
+							
+							//  alert('facebook Off. User On.');
+						
+							$('.twitterLink').unbind('click').click(function(event) {
+									popOpenTwitterWithShortenedShareLink(<?php echo $_SESSION['user_id']; ?>);
+						  });	
+						  
+							$('.emailShare').unbind('click').click(function(event) {
+									popOpenEmailWithShortenedShareLink(<?php echo $_SESSION['user_id']; ?>);
+						  });			
+						  
+	       			$('#signUpPanel, .canuckAccountWelcome, .subscribeEmailDiv, .noUserLogined, #facebookConnectButton').hide();
+		  				$('.facebookAccountWelcome, .myDeals').show();
+						
+						
+						}
+						else if( $('#isLoggedIn').val()==1 &&  $('#isLoggedInToFB').val()==0 ){
+							
+							//  alert('facebook Off. User On.');
+						
+							$('.twitterLink').unbind('click').click(function(event) {
+									popOpenTwitterWithShortenedShareLink(<?php echo $_SESSION['user_id']; ?>);
+						  });	
+						  
+							$('.emailShare').unbind('click').click(function(event) {
+									popOpenEmailWithShortenedShareLink(<?php echo $_SESSION['user_id']; ?>);
+						  });			
+						  
+							$('#myDeals,#facebookConnectButton').show();
+							$(".canuckAccountWelcome").show();
+							$(".subscribeEmailDiv,#signUpPanel").hide();
+						
+						
+						}else if(  $('#isLoggedIn').val()==0 &&  $('#isLoggedInToFB').val()==0  ){
+							
+							// alert('facebook Off. User Off.');
+							$('#myDeals').hide();
+							$("#signUpPanel,#facebookConnectButton").show();
+						
+						};
+						
+				
+				
+						var isiPad = navigator.userAgent.match(/iPad/i) != null;	
+
+						$('.signUp').click(function(event) {
+								$("#form1").submit();
+				    });	
+						$('.signIn').click(function(event) {
+								$("#form3").submit();
+					  });
+						$('.logout').click(function(event) {
+								$("#form7").submit();
+					  });	
+					  
+					  		
+//						$('.buy').click(function(event) {
+//								$("#form5").submit();
+//					  });	
+					  
+						<?php if( $admin == 1 ) { ?>
+
+						  $('#seeVendors').click(function(event) {
+								$("#mainContainer").load('/app/vendor/_listVendors.php?deal_id=<?php  echo $_GET['deal_id']   ?>&randval='+ Math.random());
+							});	
+							
+						  $('#seeDeals').click(function(event) {
+								$("#mainContainer").load('/app/deal/_listDeals.php?deal_id=<?php  echo $_GET['deal_id']   ?>&randval='+ Math.random());
+							});			
+				
+						  $('#intro').click(function(event) {
+						  	$('#mainContainer').load('/app/admin/_intro.php?randval='+ Math.random());
+							});		
+			
+						<?php }else{ ?>
+							
+							$("#actionPanel").html("|&nbsp;&nbsp;<a class='todayDeal'  >Today's Deals</a>&nbsp;|&nbsp;&nbsp;<a id='seeDeals'   style='cursor:pointer'>My Deals</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id='myAccountLink'   style='cursor:pointer'>My Account</a>&nbsp;&nbsp;&nbsp;");
+
+							$('#seeDeals').click(function(event) {
+									$('#showIt').val('0');
+									$("#seeDealsForm").submit();
+						  });		
+						  
+						<?php    
+						}; ?> 
+					  				  
+					  				  
+					  				  
+						$('.twitterLink').click(function(event) {
+							popOpenTwitterWithShortenedShareLink($(this).attr('user_id'),$(this).attr('deal_id'));
+					  });
+					  
+						$('.emailShare').click(function(event) {
+							popOpenEmailWithShortenedShareLink($(this).attr('user_id'),$(this).attr('deal_id'));
+					  });	
+				    
+					  				  
+						$('.todayDeal').click(function(event) {
+									document.location='<?php echo $_SESSION['domainURLextended'];  ?>';
+//									document.location='<?php echo $_SESSION['domainURLjustDomain'];  ?>';
+					  });			
+						  
+						$('#myAccountLink').click(function(event) {
+								$("#mainContainer").load('/app/_myaccount.php?randval='+ Math.random());
+					  });	
+					  								  
+						$('#purchase').click(function(event) {
+								if(  $('.moreInfo').is(":hidden") ){
+									//  submit this without validating fields	
+											$('#form').submit();
+								}else{
+
+												var fieldsIncomplete = false;
+												
+												if(  $('#emailOk').val() != 1  ){
+													fieldsIncomplete = true;
+												};								
+												
+												if( $('#passwordOk').val() != 1 ){
+													fieldsIncomplete = true;
+												};		
+												
+												
+												$('.inputTextbox:not(#subscribeEmail)').each(function() {
+												    if ( $(this).val() == '' ) {
+												        fieldsIncomplete = true;
+												        return;
+												    }
+												});
+												
+//												fieldsIncomplete = false;
+												
+												if( fieldsIncomplete  ){
+													$('input:text[value=""]:not(#subscribeEmail), input:password[value=""]').css({
+																				background:'#F5A9A9',
+																				border:'1px solid red'
+																			}).bind('click focus', function(event) {
+																						$(this).val('').css({
+																								background:'white',
+																								border:'1px solid #AACFE4'
+																						}).unbind('click focus')})	 
+													alert('All fields must be filled in correctly.');								
+												}
+												else{
+													$('#form').submit();
+												};
+								};
+							
+
+
+					  });		
+					  
+						$('#CCplainText,.highlight').mouseover(function(){
+													$(this).css({
+																				background:'#F3F781'
+																			})
+							}).mouseout(function(){
+													$(this).css({
+																				background:'#EDEFF4'
+																			})
+							});
+								  
+					  
+						$('#editCreditCard, #CCplainText').click(function(event) {
+								$('#cc').data('tempStorage', $('#cc').val()).attr('readonly', false).focus();
+								//$('#destorySeedSession').submit();
+								$("#updatePaymentInfo").val(1);
+								$("#cc").val("").focus();
+								$('.moreInfo, #inputCCField').show();
+								$('#editCreditCard').text('');
+								$('#purchase').html("<img  src='/images/button.png' alt='' />Save and Purchase");
+								$('#maybeCancel,.cancelSave').show();
+								$('#nevermind, #CCplainText').hide();
+					  });			
+					  
+						$('#cancelSave').click(function(event) {
+								$("#updatePaymentInfo").val(0);
+								$('.moreInfo').hide();
+								$("#cc").val($('#cc').data('tempStorage'));
+								$('#editCreditCard').text('Edit Card');
+								$('#purchase').html("<img  src='/images/button.png' alt='' />Purchase");
+								$('#maybeCancel,.cancelSave, #inputCCField').hide();
+								$('#nevermind, #CCplainText').show();
+								$('#cc').css({
+																		background:'white',
+																		border:'1px solid #AACFE4'
+																}).unbind('click focus').attr('readonly', true);
+					  });	
+					  
+							
+						
+						
+						
+					  
+					  if(  $('#isAuthorized').val() == 1  ){							  
+										$('#maybeCancel, .moreInfo, #inputCCField').hide();
+										$('#nevermind, #CCplainText').show();
+										$('#cc').attr('readonly', true);					  	
+					  }else{
+					  				$('#CCplainText').hide();
+					  				$('#inputCCField').show();
+					  };
+					  
+					  if(  $('#openForEdit').val() == 1  ){				// SWITCHED IS ON FROM if(  isset($niceError) ) IN _purchase.php DERIVED FROM ERRORS HANDLING FROM AUTHORIZE 			  
+										$('.moreInfo,#maybeCancel,#inputCCField').show();
+										$('#editCreditCard').text('');
+										$('#nevermind, #maybeCancel, #CCplainText').hide();
+										$('#cc').attr('readonly', false);	
+										$('#updatePaymentInfo').val(1) ;			
+										$('input:text[value=""]:not(#subscribeEmail), input:password[value=""]').css({  // turns any blank field into a red background
+																				background:'#F5A9A9',
+																				border:'1px solid red'
+																			}).bind('click focus', function(event) {
+																						$(this).val('').css({
+																								background:'white',
+																								border:'1px solid #AACFE4'
+																						}).unbind('click focus')
+																			})
+										  	
+					  };
+					  
+					  
+					  $(  $('#classToHighlightRed').val()  ).css({background:'#F5A9A9',
+																											border:'1px solid red'  })
+																								 .click(function(event) {
+																								 	
+																												$(this).css({background:'white', border:'1px solid #AACFE4'});
+																												
+																												if( $(this).attr('class') == "expirationDateArea"){
+																													$(".expirationDateArea").css({background:'white', border:'1px solid #AACFE4'});
+																												};
+																												
+																									});
+																									
+					  $(  $('#classToMakeBlank').val()  ).val('');			
+					
+					
+					
+					
+						$('.widthLeftNewUserBuyerPassword#password,.widthLeftNewUserBuyerPassword#password2').click(function(event) {
+							
+															$(this).val('');
+															
+															}).blur(function(event) {
+																
+																	
+																	if( $(this).val().length  <= 3 && $(this).val() != ''
+																			){
+																								$(this).val('').focus();
+																								alert($(this).attr('id')+' password must be at least 3 characters');
+																								$('#passwordOk').val('0');	
+																	}
+																	else if( $('#password').val() !='' && 
+																			$('#password2').val() !='' &&
+																			$('#password').val() != $('#password2').val()){
+																								$('#password,#password2').css({
+																									background:'#F5A9A9',
+																									border:'1px solid red'
+																								}).click(function(event) {
+																									$('#password,#password2').val('').css({
+																											background:'white',
+																											border:'1px solid #AACFE4'
+																										}).unbind('click');
+																									});	
+																								$('#passwordOk').val('0');	
+																	}else if(
+																			$('#password').val() !='' && 
+																			$('#password2').val() !='' &&
+																			$('#password').val() == $('#password2').val()
+																	){
+																								$('#passwordOk').val('1');	
+																	};
+																	
+						});	
+						
+						
+						$('.newUserBuyerInputField#email ,  .moreInfoInputField#email').click(function(event) {
+							
+															$(this).data('originalvalue',$(this).val());
+															$(this).val('');
+															
+															})
+															
+																.blur(function(event) {
+																	
+																	thisEle = $(this);
+																
+
+																
+																if( thisEle.data('originalvalue') != $(this).val() &&
+																		$(this).val() != ''
+																){
+																	
+								 													$.post("/app/_checkEmailInUse.php",{
+																					email: thisEle.val()
+																					},
+																					function(xml) {
+																								var message = $(xml).find('data').text();
+																								if(  message == 'Email already subscribed.'){
+																									var warningMessage = message;
+																									$('#emailOk').val('0');
+																								}
+																								else if( message == 'Bad email format.'){
+																									var warningMessage = message;
+																									$('#emailOk').val('0');
+																								}else if( message == 'Good'){
+																									$('#emailOk').val('1');
+																								};
+																								
+																								if( warningMessage ){
+									 																	thisEle.css({
+									 																			background:'#F5A9A9',
+									 																			border:'1px solid red'
+									 																		}).val(warningMessage)
+									 																		.click(function(event) {
+									 																			thisEle.val('').css({
+									 																					background:'white',
+									 																					border:'1px solid #AACFE4'
+									 																			}).unbind('click')
+														  											});			
+																								};
+
+																			 		});																		
+																	
+																};
+
+					  });			
+					  
+						$('#subscribeButton').click(function(event) {
+							
+							if(  $('#subscribeEmail').val() == '' ){
+								alert('Opps.  No email entered.');
+							}else{
+ 													$.post("/app/_subscribe.php",{
+																					email: $('#subscribeEmail').val(),
+																					cause_id:<?php if(isset($cause_id)) echo $cause_id;else echo 0; ?>,
+																					referredby:<?php echo $_SESSION["referredby"] ; ?>
+																					},
+																					function(xml) {
+																								var message = $(xml).find('data').text();
+																								if( message ){
+																									alert(message);
+																								};
+																								$('#subscribeEmail').val('');
+																			 		});					
+							};
+							
+							
+
+					  });											  
+					    
+
+					  
+						<?php
+						/*  SET ARGUMENT referredbyId TO EQUAL LOGINED USER_ID OR NOT IF NOT LOGGED IN */
+						$referredbyId = isset($_SESSION['user_id'])?$_SESSION['user_id']:0;
+						?>					  
+					  
+					  
+
+					  					
+				    $('#authenticateFacebookUserForm').ajaxForm({
+				        target: '#hiddenDiv',
+				        success: function() { 
+				            
+				        }
+				    });
+				    
+				    $('#authenticateCanuckUserForm').ajaxForm({
+				        target: '#hiddenDiv',
+				        success: function() { 
+				            
+				        }
+				    });
+				    
+				    
+				    $('#destorySessionForm').ajaxForm({
+				        target: '#hiddenDiv',
+				        success: function() { 
+				            
+				        }
+				    });
+				    
+				    $('#destoryFacebookSession').ajaxForm({
+				        target: '#hiddenDiv',
+				        success: function() { 
+				            
+				        }
+				    });				 
+				    
+
+				    
+				    $('#seeDealsForm, #myaccountForm').ajaxForm({
+				        target: '#mainContainer',
+				        success: function() { 
+				            
+				        }
+				    });			
+	    
+				    $('#viewCart').ajaxForm({
+				        target: '#mainContainer',
+				        success: function() { 
+				            
+				        }
+				    });			
+				    
+				    
+//				    
+//				    $('#greetFacebookUserForm').ajaxForm({
+//				        target: '#greetFacebookUser',
+//				        success: function() { 
+//				        }
+//				    });							    
+//				    
+				    
+				    
+					    
+						$('#quantity').change(function() 
+				    {
+				    		var x;
+				    	
+				    		$('#total').val($('#origvalue').val());
+				    		
+				    		x = Number($('#total').val()).toFixed(2);
+				    		
+				    		$('#totalDiv').text(x);
+				    		
+
+								if(  eval($('#quantity').val()) >  eval($('#howmanyMoreCanBuy').val()) ){
+									alert('Quantity allowed exceeded.');
+									
+									$('#quantity').val("1");
+								}
+								else{
+									$('#total').val($('#quantity').val()*$('#total').val());
+									
+									x = Number($('#total').val()).toFixed(2);
+									
+									$('#totalDiv').text(x );
+								};
+				    	 	
+								
+				    }); 
+    
+            $(".button").hover(function(){
+                $(".button img").css({border:'none'})
+                .animate({top:"-10px"}, 200).animate({top:"-4px"}, 200) // first jump
+                .animate({top:"-7px"}, 100).animate({top:"-4px"}, 100) // second jump
+                .animate({top:"-6px"}, 100).animate({top:"-4px"}, 100); // the last jump
+            });
+
+
+
+//						$(window).unload( function () { alert("Bye now!"); } );
+
+//			$("#test").html($(window).height());
+			$(".minHeightDiv").css({height: $(window).height() - 213});
+			$(".minHeightDivSplash").css({height: ($(window).height()) - 174});
+
+
+			
+					
+});
+			
+</script>

@@ -36,6 +36,14 @@
 								
 									$.post("<?php echo base_url() . 'index.php/home/product_edit/';    ?>",{
 										name: $('#name').val(),
+										description: $('#description').val(),
+										discount: $('#discount').val(),
+										attribute: $('#attribute').val(),
+										rating: $('#rating').val(),
+										year: $('#year').val(),
+										price: $('#price').val(),
+										quantity: $('#quantity').val(),
+										shipping_handling: $('#shipping_handling').val(),
 										product_id : <?php echo $products[0]->id;    ?>,
 										vendor_id: <?php  echo $vendor_id   ?>
 									},function(data) {
@@ -46,10 +54,20 @@
 							<?php    
 							}else{  ?>
 								
+								
 									$.post("<?php echo base_url() . 'index.php/home/product_insert/';    ?>",{
 										name: $('#name').val(),
+										description: $('#description').val(),
+										discount: $('#discount').val(),
+										attribute: $('#attribute').val(),
+										rating: $('#rating').val(),
+										year: $('#year').val(),
+										price: $('#price').val(),
+										quantity: $('#quantity').val(),
+										shipping_handling: $('#shipping_handling').val(),
 										vendor_id: <?php  echo $vendor_id   ?>
 									},function(data) {
+										
 											window.parent.$("#product_list").html(data); 
 											window.parent.$('body').click();
 									});							
@@ -100,10 +118,122 @@
 				?>">
 			</td>
 		</tr>
-		
-		
+		<tr>
+			<td>Description
+			</td>
+			<td>
+				<input class='input_field' name="description" id="description"  value="<?php
+				
+				
+					if( count($products) > 0  ){
+						echo $products[0]->description; 
+					};
+				 
+				 
+				?>">
+			</td>
+		</tr>		
+		<tr>
+			<td>Rating
+			</td>
+			<td>
+				<input class='input_field' name="rating" id="rating"  value="<?php
+				
+				
+					if( count($products) > 0  ){
+						echo $products[0]->rating; 
+					};
+				 
+				 
+				?>">
+			</td>
+		</tr>		
 
+		<tr>
+			<td>Price
+			</td>
+			<td>
+				<input class='input_field' name="price" id="price"  value="<?php
+				
+				
+					if( count($products) > 0  ){
+						echo $products[0]->price; 
+					};
+				 
+				 
+				?>">
+			</td>
+		</tr>		
 		
+		
+		<tr>
+			<td>Discount
+			</td>
+			<td>
+				<input class='input_field' name="discount" id="discount"  value="<?php
+				
+				
+					if( count($products) > 0  ){
+						echo $products[0]->discount; 
+					};
+				 
+				 
+				?>">
+			</td>
+		</tr>		
+		<tr>
+			<td>Shipping and Handling
+			</td>
+			<td>
+				<input class='input_field' name="shipping_handling" id="shipping_handling"  value="<?php
+				
+				
+					if( count($products) > 0  ){
+						echo $products[0]->shipping_handling; 
+					};
+				 
+				 
+				?>">
+			</td>
+		</tr>		
+		
+		<tr>
+			<td>Year
+			</td>
+			<td>
+				<input class='input_field' name="year" id="year"  value="<?php
+				
+				
+					if( count($products) > 0  ){
+						echo $products[0]->year; 
+					};
+				 
+				 
+				?>">
+			</td>
+		</tr>		
+		
+		
+			
+		<tr>
+			<td>Quantity
+			</td>
+			<td>
+				<input class='input_field' name="quantity" id="quantity"  value="<?php
+				
+				
+					if( count($products) > 0  ){
+						echo $products[0]->quantity; 
+					};
+				 
+				 
+				?>">
+			</td>
+		</tr>			
+		
+		
+		
+			
 		
 		<tr>
 			<td colspan=2   style='text-align:center'  >

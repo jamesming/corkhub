@@ -298,7 +298,7 @@ function product_form(){
 	
 	$product_id = $this->uri->segment(4);
 	
-	$select_what =  'name, id';
+	$select_what =  'name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
 	
 	$where_array = array('id' =>  $product_id );
 
@@ -327,6 +327,14 @@ function product_insert(){
 	
 	$insert_what = array(
 	'name' => $this->input->post('name'),
+	'description' => $this->input->post('description'),
+	'discount' => $this->input->post('discount'),
+	'attribute' => $this->input->post('attribute'),
+	'rating' => $this->input->post('rating'),
+	'year' => $this->input->post('year'),
+	'price' => $this->input->post('price'),
+	'quantity' => $this->input->post('quantity'),
+	'shipping_handling' => $this->input->post('shipping_handling'),
 	'vendor_id'  => $this->input->post('vendor_id')
 	);
 	
@@ -337,7 +345,7 @@ function product_insert(){
 									
 									
 	
-	$select_what =  'name, id, vendor_id';
+	$select_what =  'vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
 	
 	$where_array = array('vendor_id' => $this->input->post('vendor_id'));
 
@@ -345,7 +353,7 @@ function product_insert(){
 	
 	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
 
-	$data= array('products'  => $products);	
+	$data= array('products'  => $products, 'vendor_id'  => $this->input->post('vendor_id'));	
 
 	$this->load->view('home/products_list_view', $data);
 
@@ -370,13 +378,21 @@ function product_edit(){
 	$vendor_id = $this->input->post('vendor_id');
 
 	$set_what_array = array(
-							'name' => $this->input->post('name')
+				'name' => $this->input->post('name'),
+				'description' => $this->input->post('description'),
+				'discount' => $this->input->post('discount'),
+				'attribute' => $this->input->post('attribute'),
+				'rating' => $this->input->post('rating'),
+				'year' => $this->input->post('year'),
+				'price' => $this->input->post('price'),
+				'quantity' => $this->input->post('quantity'),
+				'shipping_handling' => $this->input->post('shipping_handling')
 							);			
 					
 	$this->my_database_model->update_table( $table = 'products', $primary_key = $product_id, $set_what_array );						
 									
 	
-	$select_what =  'name, id, vendor_id';
+	$select_what =  'vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
 	
 	$where_array = array('vendor_id' => $vendor_id);
 
@@ -417,7 +433,7 @@ function product_delete(){
 	
 
  	
-	$select_what =  'name, id, vendor_id';
+	$select_what =  'vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
 	
 	$where_array = array( 'vendor_id' => $vendor_id );
 

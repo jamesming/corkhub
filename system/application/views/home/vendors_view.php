@@ -200,9 +200,6 @@
 
 <body>
 
-
-	
-	
 	<div class='container'     >
 				
   	<a href="#iframe_to_edit_div"  class="iframe_to_edit_div_link">
@@ -210,7 +207,7 @@
   	</a>		
 				
 	</div>
-	<div class='container'     >
+	<div id='vendor_list' class='container'     >
 				
 		<?php   echo '<pre>';print_r(  $vendors    );echo '</pre>';    ?>	
 				

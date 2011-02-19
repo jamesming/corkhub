@@ -89,7 +89,7 @@ function vendors(){
 	
 	$select_what =  'name';
 	
-	$where_array = array('id' => '1' );
+	$where_array = array();
 
 	$table  = 'vendors';
 	
@@ -119,7 +119,40 @@ function vendor_form(){
 
 }  
 
+/**
+ * vendor_insert
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/home/vendor_insert
+ * @access public
+ **/ 
 
+function vendor_insert(){
+	
+	$insert_what = array(
+	'name' => $this->input->post('name')
+	);
+	
+	$primary_key = $this->my_database_model->insert_table(
+									$table = 'vendors', 
+									$insert_what
+									);
+	
+	$select_what =  'name';
+	
+	$where_array = array();
+
+	$table  = 'vendors';
+	
+	$vendors = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
+
+	$data= array('vendors'  => $vendors);	
+
+	$this->load->view('home/vendors_insert_view', $data);
+
+}  
 
 /**
  * users

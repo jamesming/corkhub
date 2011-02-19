@@ -49,16 +49,9 @@ class Home extends Controller {
  **/ 
 
 function index(){
-	
-					$select_what =  'name';
-					
-					$where_array = array('id' => '1' );
-				
-					$table  = 'vendors';
-					
-					$vendors = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
 
-					echo '<pre>';print_r(  $vendors   );echo '</pre>';  exit;
+	$data['controller'] = 'home';
+	$this->load->view('home/index_view', $data);
  
 }
 	
@@ -80,7 +73,69 @@ function index_inside(){
 
 }
 
-  
+
+/**
+ * vendors
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/home/vendors
+ * @access public
+ **/ 
+
+function vendors(){
+	
+	
+	$select_what =  'name';
+	
+	$where_array = array('id' => '1' );
+
+	$table  = 'vendors';
+	
+	$vendors = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
+
+	$data= array('vendors'  => $vendors);	
+
+	$this->load->view('home/vendors_view', $data);
+
+}  
+
+
+/**
+ * vendor_form
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/home/vendor_form
+ * @access public
+ **/ 
+
+function vendor_form(){
+	
+
+	$this->load->view('home/vendor_form_view');
+
+}  
+
+
+
+/**
+ * users
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/home/users
+ * @access public
+ **/ 
+
+function users(){
+	
+	$this->load->view('home/users_view');
+
+}  
 	
 }
 

@@ -56,3 +56,13 @@ border:0px;
 }
 
 
+.button{
+	text-align:center;
+	font-size:18px;
+	background:orange;
+	color:white;
+	width:100px;
+	display:inline;
+	margin:0px 10px 0px 10px;
+	padding:10px;
+}

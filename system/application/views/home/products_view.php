@@ -10,21 +10,23 @@
 			$(document).ready(function() { 
 				
 						$('.iframe_to_edit_div_link').fancyZoom().click(function(event) {
-							$("#iframe_content_to_edit").attr('src','<?php echo base_url();    ?>index.php/home/vendor_form/');
+							$("#iframe_content_to_edit").attr('src','<?php echo base_url();    ?>index.php/home/product_form/<?php  echo $vendor_id   ?>');
 						});	
 						
 						
-						$('.vendor_name').live('click', function() {
-							var vendor_id = $(this).attr('vendor_id');
-							document.location.href='<?php echo  base_url();   ?>index.php/home/products/' + vendor_id;
+						$('.product_name').live('click', function() {
+							var product_id = $(this).attr('product_id');
+							document.location.href='<?php echo  base_url();   ?>index.php/home/products/' + product_id;
 						});		
 						
 						$('.delete').live('click', function() {
+							var product_id = $(this).attr('product_id');
 							var vendor_id = $(this).attr('vendor_id');
-							$.post("<?php echo base_url() . 'index.php/home/vendor_delete';    ?>",{
+							$.post("<?php echo base_url() . 'index.php/home/product_delete';    ?>",{
+								product_id: product_id,
 								vendor_id: vendor_id
 							},function(data) {
-									$("#vendor_list").html(data); 
+									$("#product_list").html(data); 
 							});	
 						});		
 						
@@ -221,21 +223,21 @@
 <body>
 
 	<div class='container title_head'   >
-		Vendors
+		products
 	</div>
 
 	<div class='container'     >
 				
   	<a href="#iframe_to_edit_div"  class="iframe_to_edit_div_link">
-  		<img class='edit_png' src='../../images/plus.jpg'>
+  		<img class='edit_png' src='<?php echo base_url();    ?>images/plus.jpg'>
   	</a>		
 				
 	</div>
 	<div class='container'    style='padding-top:20px'     >
-		<ul  id='vendor_list' class='list'>
+		<ul  id='product_list' class='list'>
 		<?php     
 
-			$this->load->view('home/vendors_list_view.php');
+			$this->load->view('home/products_list_view.php');
 	
 		?>
 				

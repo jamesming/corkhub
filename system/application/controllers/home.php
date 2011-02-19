@@ -169,6 +169,42 @@ function vendor_insert(){
 
 
 /**
+ * vendor_edit
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/home/vendor_edit
+ * @access public
+ **/ 
+
+function vendor_edit(){
+	
+	$vendor_id = $this->input->post('vendor_id');
+
+	$set_what_array = array(
+							'name' => $this->input->post('name')
+							);			
+					
+	$this->my_database_model->update_table( $table = 'vendors', $primary_key = $vendor_id, $set_what_array );						
+									
+	
+	$select_what =  'name, id';
+	
+	$where_array = array();
+
+	$table  = 'vendors';
+	
+	$vendors = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
+
+	$data= array('vendors'  => $vendors);	
+
+	$this->load->view('home/vendors_list_view', $data);
+
+}  
+
+
+/**
  * vendor_delete
  *
  * {@source }
@@ -205,6 +241,185 @@ function vendor_delete(){
 }  
 
 
+
+
+
+/**
+ * products
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/home/products
+ * @access public
+ **/ 
+
+function products(){
+	
+	
+	$select_what =  'name, id, vendor_id';
+	
+	$where_array = array('vendor_id' => $this->uri->segment(3));
+
+	$table  = 'products';
+	
+	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
+
+	$data= array('products'  => $products, 'vendor_id' => $this->uri->segment(3));	
+
+	$this->load->view('home/products_view', $data);
+
+}  
+
+
+/**
+ * product_form
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/home/product_form
+ * @access public
+ **/ 
+
+function product_form(){
+	
+	$vendor_id = $this->uri->segment(3);
+	
+	$product_id = $this->uri->segment(4);
+	
+	$select_what =  'name, id';
+	
+	$where_array = array('id' =>  $product_id );
+
+	$table  = 'products';
+	
+	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
+
+	$data= array('products'  => $products, 'vendor_id'  => $vendor_id);	
+	
+	$this->load->view('home/product_form_view', $data);
+
+}  
+
+
+/**
+ * product_insert
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/home/product_insert
+ * @access public
+ **/ 
+
+function product_insert(){
+	
+	$insert_what = array(
+	'name' => $this->input->post('name'),
+	'vendor_id'  => $this->input->post('vendor_id')
+	);
+	
+	$primary_key = $this->my_database_model->insert_table(
+									$table = 'products', 
+									$insert_what
+									);
+									
+									
+	
+	$select_what =  'name, id, vendor_id';
+	
+	$where_array = array('vendor_id' => $this->input->post('vendor_id'));
+
+	$table  = 'products';
+	
+	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
+
+	$data= array('products'  => $products);	
+
+	$this->load->view('home/products_list_view', $data);
+
+}  
+
+
+
+/**
+ * product_edit
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/home/product_edit
+ * @access public
+ **/ 
+
+function product_edit(){
+	
+	$product_id = $this->input->post('product_id');
+	
+	$vendor_id = $this->input->post('vendor_id');
+
+	$set_what_array = array(
+							'name' => $this->input->post('name')
+							);			
+					
+	$this->my_database_model->update_table( $table = 'products', $primary_key = $product_id, $set_what_array );						
+									
+	
+	$select_what =  'name, id, vendor_id';
+	
+	$where_array = array('vendor_id' => $vendor_id);
+
+	$table  = 'products';
+	
+	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
+
+	$data= array('products'  => $products);	
+
+	$this->load->view('home/products_list_view', $data);
+
+}  
+
+
+
+
+/**
+ * product_delete
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/home/product_delete
+ * @access public
+ **/ 
+
+function product_delete(){
+	
+	$vendor_id = $this->input->post('vendor_id');
+
+ 	$product_id = $this->input->post('product_id');
+ 	
+	$where_array = array('id' => $product_id );
+	
+	$table  = 'products';
+				
+	$this->my_database_model->delete_from_table( $table, $where_array);
+	
+
+ 	
+	$select_what =  'name, id, vendor_id';
+	
+	$where_array = array( 'vendor_id' => $vendor_id );
+
+	$table  = 'products';
+	
+	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
+
+	$data= array('products'  => $products);	
+
+	$this->load->view('home/products_list_view', $data);
+
+}  
 
 
 /**

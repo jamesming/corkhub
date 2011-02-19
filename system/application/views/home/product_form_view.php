@@ -32,23 +32,25 @@
 						$('#submit').click(function(event) {
 							
 							<?php
-							if( count($vendors) > 0  ){  ?>
+							if( count($products) > 0  ){  ?>
 								
-									$.post("<?php echo base_url() . 'index.php/home/vendor_edit/';    ?>",{
+									$.post("<?php echo base_url() . 'index.php/home/product_edit/';    ?>",{
 										name: $('#name').val(),
-										vendor_id : <?php echo $vendors[0]->id;    ?>
+										product_id : <?php echo $products[0]->id;    ?>,
+										vendor_id: <?php  echo $vendor_id   ?>
 									},function(data) {
-											window.parent.$("#vendor_list").html(data); 
+											window.parent.$("#product_list").html(data); 
 											window.parent.$('body').click();
 									});							
 								
 							<?php    
 							}else{  ?>
 								
-									$.post("<?php echo base_url() . 'index.php/home/vendor_insert/';    ?>",{
-										name: $('#name').val()
+									$.post("<?php echo base_url() . 'index.php/home/product_insert/';    ?>",{
+										name: $('#name').val(),
+										vendor_id: <?php  echo $vendor_id   ?>
 									},function(data) {
-											window.parent.$("#vendor_list").html(data); 
+											window.parent.$("#product_list").html(data); 
 											window.parent.$('body').click();
 									});							
 								
@@ -90,8 +92,8 @@
 				<input class='input_field' name="name" id="name"  value="<?php
 				
 				
-					if( count($vendors) > 0  ){
-						echo $vendors[0]->name; 
+					if( count($products) > 0  ){
+						echo $products[0]->name; 
 					};
 				 
 				 

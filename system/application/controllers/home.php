@@ -432,6 +432,86 @@ function product_delete(){
 }  
 
 
+
+/**
+ * product_upload_image_form
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/home/product_upload_image_form
+ * @access public
+ **/ 
+
+function product_upload_image_form(){
+	
+	$vendor_id = $this->uri->segment(3);
+	
+	$product_id = $this->uri->segment(4);
+	
+	$data= array('product_id'  => $product_id, 'vendor_id'  => $vendor_id);	
+	
+	$this->load->view('home/product_upload_image_form_view', $data);
+
+
+}  
+
+
+
+
+/**
+ * product_upload_image_form
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/home/product_upload_image_form
+ * @access public
+ **/ 
+
+function product_upload_image(){
+	
+	$product_id = $this->input->post('product_id');
+	
+	$vendor_id = $this->input->post('vendor_id');
+
+	$path_array = array('trunk'=> $vendor_id, 'branch'=> $product_id );
+	$upload_path = $this->tools->set_directory_for_upload( $path_array );
+	
+	$config['upload_path'] = './' . $upload_path;
+	$config['allowed_types'] = 'bmp|jpeg|gif|jpg|png';
+	$config['overwrite'] = 'TRUE';
+	$config['file_name'] = 'image.png';
+
+	
+	$this->load->library('upload', $config);
+	
+	
+
+	if ( ! $this->upload->do_upload("Filedata"))
+	{
+		
+		 		echo $this->upload->display_errors();
+		 		exit;	
+		
+	}	
+	else
+	{	
+		
+		$data= array('product_id'  => $product_id, 'vendor_id'  => $vendor_id);	
+		
+		$this->load->view('home/product_upload_image_view', $data);
+		
+	}				
+	
+
+
+}  
+
+
+
+
+
 /**
  * users
  *

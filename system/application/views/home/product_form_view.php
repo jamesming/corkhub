@@ -36,6 +36,9 @@
 								
 									$.post("<?php echo base_url() . 'index.php/home/product_edit/';    ?>",{
 										name: $('#name').val(),
+										ph: $('#ph').val(),
+										acid: $('#acid').val(),
+										alcohol: $('#alcohol').val(),
 										description: $('#description').val(),
 										discount: $('#discount').val(),
 										attribute: $('#attribute').val(),
@@ -57,6 +60,9 @@
 								
 									$.post("<?php echo base_url() . 'index.php/home/product_insert/';    ?>",{
 										name: $('#name').val(),
+										ph: $('#ph').val(),
+										acid: $('#acid').val(),
+										alcohol: $('#alcohol').val(),
 										description: $('#description').val(),
 										discount: $('#discount').val(),
 										attribute: $('#attribute').val(),
@@ -148,8 +154,58 @@
 			</td>
 		</tr>				
 		
+		<tr>
+			<td>Ph
+			</td>
+			<td>
+				<input class='input_field' name="ph" id="ph"  value="<?php
+				
+				
+					if( count($products) > 0  ){
+						echo $products[0]->ph; 
+					};
+				 
+				 
+				?>">
+			</td>
+		</tr>			
+
+
+		
+		<tr>
+			<td>Acid
+			</td>
+			<td>
+				<input class='input_field' name="acid" id="acid"  value="<?php
+				
+				
+					if( count($products) > 0  ){
+						echo $products[0]->acid; 
+					};
+				 
+				 
+				?>">
+			</td>
+		</tr>			
 		
 		
+		<tr>
+			<td>Alcohol
+			</td>
+			<td>
+				<input class='input_field' name="alcohol" id="alcohol"  value="<?php
+				
+				
+					if( count($products) > 0  ){
+						echo $products[0]->alcohol; 
+					};
+				 
+				 
+				?>">
+			</td>
+		</tr>			
+		
+
 		<tr>
 			<td>Rating
 			</td>

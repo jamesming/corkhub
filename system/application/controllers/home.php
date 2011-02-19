@@ -298,7 +298,7 @@ function product_form(){
 	
 	$product_id = $this->uri->segment(4);
 	
-	$select_what =  'name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
+	$select_what =  'ph, acid, alcohol, vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
 	
 	$where_array = array('id' =>  $product_id );
 
@@ -327,6 +327,9 @@ function product_insert(){
 	
 	$insert_what = array(
 	'name' => $this->input->post('name'),
+	'ph' => $this->input->post('ph'),
+	'acid' => $this->input->post('acid'),
+	'alcohol' => $this->input->post('alcohol'),
 	'description' => $this->input->post('description'),
 	'discount' => $this->input->post('discount'),
 	'attribute' => $this->input->post('attribute'),
@@ -345,7 +348,7 @@ function product_insert(){
 									
 									
 	
-	$select_what =  'vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
+	$select_what =  'ph, acid, alcohol, vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
 	
 	$where_array = array('vendor_id' => $this->input->post('vendor_id'));
 
@@ -379,6 +382,9 @@ function product_edit(){
 
 	$set_what_array = array(
 				'name' => $this->input->post('name'),
+				'ph' => $this->input->post('ph'),
+				'acid' => $this->input->post('acid'),
+				'alcohol' => $this->input->post('alcohol'),
 				'description' => $this->input->post('description'),
 				'discount' => $this->input->post('discount'),
 				'attribute' => $this->input->post('attribute'),
@@ -392,7 +398,7 @@ function product_edit(){
 	$this->my_database_model->update_table( $table = 'products', $primary_key = $product_id, $set_what_array );						
 									
 	
-	$select_what =  'vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
+	$select_what =  'ph, acid, alcohol, vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
 	
 	$where_array = array('vendor_id' => $vendor_id);
 
@@ -433,7 +439,7 @@ function product_delete(){
 	
 
  	
-	$select_what =  'vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
+	$select_what =  'ph, acid, alcohol, vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
 	
 	$where_array = array( 'vendor_id' => $vendor_id );
 

@@ -31,13 +31,40 @@
 				
 						$('#submit').click(function(event) {
 							
-							// AJAX UPDATE
-							$.post("<?php echo base_url() . 'index.php/home/vendor_insert/';    ?>",{
-								name: $('#name').val()
-							},function(data) {
-									window.parent.$("#vendor_list").html(data); 
-									window.parent.$('body').click();
-							});	
+							<?php
+							if( count($vendors) > 0  ){  ?>
+								
+									$.post("<?php echo base_url() . 'index.php/home/vendor_edit/';    ?>",{
+										name: $('#name').val()
+									},function(data) {
+											window.parent.$("#vendor_list").html(data); 
+											window.parent.$('body').click();
+									});							
+								
+							<?php    
+							}else{  ?>
+								
+									$.post("<?php echo base_url() . 'index.php/home/vendor_insert/';    ?>",{
+										name: $('#name').val()
+									},function(data) {
+											window.parent.$("#vendor_list").html(data); 
+											window.parent.$('body').click();
+									});							
+								
+							<?php    
+							};
+							?>					
+							
+							
+							
+							
+
+							
+							
+							
+							
+							
+							
 
 						});		
 
@@ -48,6 +75,18 @@
 </head>
 
 <body>
+	
+	<?php  
+	
+	
+	
+	
+	
+
+	
+	
+	?>
+	
 
 	<form name='form0'>
 	
@@ -56,7 +95,15 @@
 			<td>Name
 			</td>
 			<td>
-				<input class='input_field' name="name" id="name"  value=''>
+				<input class='input_field' name="name" id="name"  value='<?php
+				
+				
+					if( count($vendors) > 0  ){
+						echo $vendors[0]->name; 
+					};
+				 
+				 
+				?>'>
 			</td>
 		</tr>
 		<tr>

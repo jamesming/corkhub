@@ -10,8 +10,28 @@
 			$(document).ready(function() { 
 				
 						$('.iframe_to_edit_div_link').fancyZoom().click(function(event) {
-							$("#iframe_content_to_edit").attr('src','<?php echo base_url();    ?>index.php/home/vendor_form/');
+							$("#iframe_content_to_edit").attr('src','<?php echo base_url();    ?>index.php/home/vendor_form/13');
 						});	
+						
+						
+						$('.edit').live('click', function() {
+							var vendor_id = $(this).attr('vendor_id');
+							//document.location.href='<?php echo  base_url();   ?>index.php/home/products';
+						});		
+						
+						$('.delete').live('click', function() {
+							var vendor_id = $(this).attr('vendor_id');
+							$.post("<?php echo base_url() . 'index.php/home/vendor_delete';    ?>",{
+								vendor_id: vendor_id
+							},function(data) {
+									$("#vendor_list").html(data); 
+							});	
+						});		
+						
+						
+										
+						
+						
 
 			});
 			 
@@ -200,6 +220,10 @@
 
 <body>
 
+	<div class='container title_head'   >
+		Vendors
+	</div>
+
 	<div class='container'     >
 				
   	<a href="#iframe_to_edit_div"  class="iframe_to_edit_div_link">
@@ -207,9 +231,13 @@
   	</a>		
 				
 	</div>
-	<div id='vendor_list' class='container'     >
-				
-		<?php   echo '<pre>';print_r(  $vendors    );echo '</pre>';    ?>	
+	<div class='container'    style='padding-top:20px'     >
+		<ul  id='vendor_list' class='list'>
+		<?php     
+
+			$this->load->view('home/vendors_list_view.php');
+	
+		?>
 				
 	</div>
 	<div id="iframe_to_edit_div"   style='visibility:hidden'  >

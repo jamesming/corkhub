@@ -87,7 +87,7 @@ function index_inside(){
 function vendors(){
 	
 	
-	$select_what =  'name';
+	$select_what =  'name, id';
 	
 	$where_array = array();
 
@@ -114,8 +114,19 @@ function vendors(){
 
 function vendor_form(){
 	
+	$vendor_id = $this->uri->segment(3);
+	
+	$select_what =  'name, id';
+	
+	$where_array = array('id' =>  $vendor_id );
 
-	$this->load->view('home/vendor_form_view');
+	$table  = 'vendors';
+	
+	$vendors = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
+
+	$data= array('vendors'  => $vendors);	
+	
+	$this->load->view('home/vendor_form_view', $data);
 
 }  
 
@@ -139,8 +150,10 @@ function vendor_insert(){
 									$table = 'vendors', 
 									$insert_what
 									);
+									
+									
 	
-	$select_what =  'name';
+	$select_what =  'name, id';
 	
 	$where_array = array();
 
@@ -150,9 +163,49 @@ function vendor_insert(){
 
 	$data= array('vendors'  => $vendors);	
 
-	$this->load->view('home/vendors_insert_view', $data);
+	$this->load->view('home/vendors_list_view', $data);
 
 }  
+
+
+/**
+ * vendor_delete
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/home/vendor_delete
+ * @access public
+ **/ 
+
+function vendor_delete(){
+
+ 	$vendor_id = $this->input->post('vendor_id');
+ 	
+	$where_array = array('id' => $vendor_id );
+	
+	$table  = 'vendors';
+				
+	$this->my_database_model->delete_from_table( $table, $where_array);
+	
+
+ 	
+	$select_what =  'name, id';
+	
+	$where_array = array();
+
+	$table  = 'vendors';
+	
+	$vendors = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
+
+	$data= array('vendors'  => $vendors);	
+
+	$this->load->view('home/vendors_list_view', $data);
+
+}  
+
+
+
 
 /**
  * users

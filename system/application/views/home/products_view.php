@@ -221,6 +221,12 @@
 </head>
 
 <body>
+	
+	
+	<div class='container '   >
+		<a href='<?php echo base_url();    ?>index.php/home/vendors'>Go Back</a>
+	</div>
+	
 
 	<div class='container title_head'   >
 		<?php  echo $vendor_name;   ?>

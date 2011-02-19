@@ -51,9 +51,22 @@ class Home extends Controller {
 function index(){
 
 	$data['controller'] = 'home';
-	//$this->load->view('home/main_view', $data);
 	
-	$this->load->view('home/index_view', $data);
+	//$this->load->view('home/index_view', $data);
+
+
+	$select_what =  'ph, acid, alcohol, vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
+	
+	$where_array = array('id' => 25);
+
+	$table  = 'products';
+	
+	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array, $use_order = FALSE, $limit = 1 );
+
+	$data= array('products'  => $products);	
+
+	
+	$this->load->view('home/index_inside_view', $data);
  
 }
 	

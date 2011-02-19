@@ -223,7 +223,7 @@
 <body>
 
 	<div class='container title_head'   >
-		products
+		<?php  echo $vendor_name;   ?>
 	</div>
 
 	<div class='container'     >

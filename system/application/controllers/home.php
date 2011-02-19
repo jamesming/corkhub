@@ -257,6 +257,16 @@ function vendor_delete(){
 function products(){
 	
 	
+	$select_what =  'name';
+	
+	$where_array = array('id' => $this->uri->segment(3));
+
+	$table  = 'vendors';
+	
+	$vendors = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
+
+
+	
 	$select_what =  'name, id, vendor_id';
 	
 	$where_array = array('vendor_id' => $this->uri->segment(3));
@@ -265,7 +275,7 @@ function products(){
 	
 	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
 
-	$data= array('products'  => $products, 'vendor_id' => $this->uri->segment(3));	
+	$data= array('products'  => $products, 'vendor_id' => $this->uri->segment(3), 'vendor_name' => $vendors[0]->name);	
 
 	$this->load->view('home/products_view', $data);
 

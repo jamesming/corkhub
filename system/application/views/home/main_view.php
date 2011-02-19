@@ -9,13 +9,15 @@
 	<script type="text/javascript" language="Javascript">
 	
 			$(document).ready(function() { 
-	
-					setInterval(function() {
-					
-					 $('#insideDiv').load('<?php echo  base_url();   ?>index.php/<?php echo $controller; ?>/index_inside');
-	
-				  }, 1000);
 				
+						$('#vendors').click(function(event) {
+							document.location.href='<?php echo  base_url();   ?>index.php/home/vendors';
+						});		
+
+						$('#users').click(function(event) {
+							document.location.href='<?php echo  base_url();   ?>index.php/home/users';
+						});	
+
 			});
 			 
 	</script>
@@ -27,7 +29,19 @@
 
 	
 	
-	<div class='container'  id='insideDiv'    style='overflow:hidden'   >
+	<div class='container'     >
+				
+				
+					
+						<div id='vendors' class='button rounded_border cursor_pointer'  >
+						vendors
+						</div>			
+						
+						<div id='users' class='button rounded_border cursor_pointer'    >
+						users
+						</div>									
+					
+				
 	</div>
 
 

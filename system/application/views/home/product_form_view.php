@@ -121,8 +121,7 @@
 		<tr>
 			<td>Description
 			</td>
-			<td>
-				<input class='input_field' name="description" id="description"  value="<?php
+			<td><textarea  class='input_field' name="description" id="description"  ><?php
 				
 				
 					if( count($products) > 0  ){
@@ -130,9 +129,27 @@
 					};
 				 
 				 
-				?>">
+				?></textarea>
 			</td>
 		</tr>		
+		
+		<tr>
+			<td>Attribute
+			</td>
+			<td><textarea  class='input_field' name="attribute" id="attribute"  ><?php
+				
+				
+					if( count($products) > 0  ){
+						echo $products[0]->attribute; 
+					};
+				 
+				 
+				?></textarea>
+			</td>
+		</tr>				
+		
+		
+		
 		<tr>
 			<td>Rating
 			</td>

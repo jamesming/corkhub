@@ -2,36 +2,74 @@
 <?php     	$this->load->view('header/header_css.php');  ?>
 </head>
 <body>
-<div  class='container'    style='
-	background:lightyellow;
-	font-size:40px;
+<div  class='container'>
+	
+	<div  class='span-7 '     style='
+	font-size:60px;
+	color:darkorange;
+	'       >Corkhub
+	</div>
+	
+	<div  class='span-4 '       style='
+	font-size:16px;
+	color:lightblue;
+	vertical-align:bottom;
+	height:60px;
+	'       >login here 
+	</div>
+	
+	
+	<div  class='span-13 last '       style='
+	font-size:16px;
+	color:lightblue;
+	vertical-align:bottom;
+	height:60px;
 	'       >
-Corkhub
+today's cork&nbsp;&nbsp;&nbsp;
+blog&nbsp;&nbsp;&nbsp;
+community&nbsp;&nbsp;&nbsp;
+write us&nbsp;&nbsp;&nbsp;
+about&nbsp;&nbsp;&nbsp;
+	</div>	
+	
 </div>
 
-<div  class='container'    style='
-	background:lightblue;
-	font-size:40px;
-	'       >
-<?php echo $products[0]->name;    ?>
-</div>
+<hr   style='height:3px'  >
 
-<div  class='container'    style='
-	background:lightred;
-	font-size:40px;
-	'       >
+<div  class='container' >
+	
+	
+<table>
+	<tr>
+		<td width='35%'>
+			<img src='<?php  echo base_url() . '/uploads/' . $products[0]->vendor_id . '/' . $products[0]->id . '/image.png'  ?>'>
+		</td>
+		<td width='35%'>
+			<p    style='font-size:50px;'  >
+			<?php echo $products[0]->name;    ?>
+			</p>
+			<p   style='font-size:44px;'  >
+			$<?php echo $products[0]->price;    ?> <span   style='font-size:14px;'  >plus   <?php  echo $products[0]->shipping_handling;   ?>shipping and handling.</span>
+			</p>	
+			<p   style='font-size:17px;'  >
+			Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->acid;    ?>/Acid:<?php echo $products[0]->alcohol;    ?>
+			</p>		
+		</td>
+		<td align='center' style='vertical-align:middle;font-size:44px;color:gray'  >
+			<img src='<?php echo base_url();    ?>/images/buy_now.png'>
+		</td>
+	</tr>
+</table>
+	
 	
 
-<img src='<?php  echo base_url() . '/uploads/' . $products[0]->vendor_id . '/' . $products[0]->id . '/image.png'  ?>'>
 </div>
 
-<div  class='container'    style='
-	background:lightblue;
-	font-size:40px;
-	'       >
-<?php echo $products[0]->description;    ?>
+<div class='container'   style='font-size:24px;color:gray'  >
+	
+	<?php echo $products[0]->description;    ?>
+	
 </div>
-
 
 </body>
 <?php

@@ -43,7 +43,7 @@ color:darygray
 
 <div   style='background:#F1F0C4'  >
 
-			<div  class='container' >
+			<div  class='container'   style='padding-bottom:50px'  >
 				
 				<div  class='span-7 ' >
 					
@@ -243,12 +243,77 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 			</div>
 </div>
 
-
-<div class='container'   style='font-size:24px;color:gray'  >
+<div     style='
+	height:540px;
+	background:#550F0D'>
 	
-	BOTTOM
+		<div class='container'    >
+			
+			<div   style='padding:10px 10px;font-size:40px;color:white'  >
+				Past Selections:
+			</div>
+			
+			
+<style>
+	table#past td{
+	color:white;
+	font-size:27px;
+	vertical-align:middle;
+	padding:10px;
+	}
+	.image_past_wine_td{
+	background:white;
+	padding:9px 0px;
+	width:150px;
+	}
+</style>
+			
+			
+			
+			<table id='past'>
+				<tr>
+					<td align="center"   >
+						<div  class='image_past_wine_td ' >
+							<img src='<?php echo base_url();    ?>/images/Past-1.png'>
+						</div>
+						
+					</td>
+					<td align="center"   >
+						<div  class='image_past_wine_td ' >
+							<img src='<?php echo base_url();    ?>/images/Past-2.png'>
+						</div>
+						
+					</td>
+					<td align="center"   >
+						<div  class='image_past_wine_td ' >
+							<img src='<?php echo base_url();    ?>/images/Past-3.png'>
+						</div>
+						
+					</td>
+					<td align="center"   >
+						<div  class='image_past_wine_td ' >
+							<img src='<?php echo base_url();    ?>/images/Past-4.png'>
+						</div>
+						
+					</td>
+				</tr>
+				<tr>
+					<td align="center" ><span   style='font-size:15px'  >Retail Price $35</span><br><span   style='font-size:22px'  >Our price $15</span><br><span   style='font-size:22px;color:red;font-weight:bold'   >SOLD OUT</span>
+					</td>
+					<td align="center" ><span   style='font-size:15px'  >Retail Price $53</span><br><span   style='font-size:22px'  >Our price $40</span><br><span   style='font-size:22px;color:red;font-weight:bold'   >SOLD OUT</span>
+					</td>
+					<td align="center" ><span   style='font-size:15px'  >Retail Price $41</span><br><span   style='font-size:22px'  >Our price $30</span><br><span   style='font-size:22px;color:red;font-weight:bold'   >SOLD OUT</span>
+					</td>
+					<td align="center" ><span   style='font-size:15px'  >Retail Price $32</span><br><span   style='font-size:22px'  >Our price $24</span><br><span   style='font-size:22px;color:red;font-weight:bold'   >SOLD OUT</span>
+					</td>
+				</tr>
+			</table>
+			
+		
+		</div>	
 	
 </div>
+
 
 </body>
 <?php

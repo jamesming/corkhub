@@ -9,25 +9,38 @@
 	<script type="text/javascript" language="Javascript">
 	
 			$(document).ready(function() { 
-						$('#buy').click(function(event) {
-							document.location.href='<?php echo  base_url();   ?>index.php/buy/buy_form/';
+				
+						$('#submit').click(function(event) {
+							$('#form0').submit();
 						});		
+						
+						$('#quantity').change(function() {
+							
+							$('#subtotal').text(  $(this).attr('value') * <?php  echo $products[0]->price;     ?> );
+							
+							$('#total').text(  $(this).attr('value') * <?php  echo $products[0]->price;     ?> + <?php  echo $products[0]->shipping_handling;     ?>);
+
+						});
 			});
 			 
 	</script>
 
 </head>
 <body>
-
+<form name='form0' id='form0' action='<?php echo base_url()    ?>index.php?/buy/bought' method='post'>
 <?php     
 
 	$this->load->view('header/top_view.php');
 	
 ?>
 
-<div  class='container '    style='font-size:25px'  >
+
+<div  class='container '    style='font-size:15px'  >
 	
-	So how many do you want?  
+	<div  class='span-10 ' >
+		
+		
+			How many do you want?  
 	
 	<select id='quantity' name='quantity' class=' input_field'   >
 		<option value='1'>1</option>	
@@ -37,13 +50,14 @@
 		<option value='5'>5</option>	
 		<option value='6'>6</option>	
 	</select>
-</div>
-
-<div  class='container '    style='font-size:15px'  >
-	
-	<div  class='span-10 ' >
+<form>
+	<style>	
+	table#money_table td:nth-child(even){
+	text-align:right;
+	}
+	</style>
 		
-		<table     style='width:290px'   >
+		<table id='money_table'    style='width:320px;'    >
 			<tr >
 				<td colspan=2   style='text-align:center;font-size:25px'  ><?php  echo $products[0]->name;     ?>
 				</td>
@@ -52,35 +66,35 @@
 				<td>Each Cost
 				</td>
 				<td>
-					<span id='price' amt='<?php  echo $products[0]->price;     ?>'><?php  echo $products[0]->price;     ?></span>
+					<?php  echo $products[0]->price;     ?>
 				</td>
 			</tr>
 			<tr>
 				<td>Your subtotal is:
 				</td>
 				<td>
-					<span id='subtotal' ></span>
+					<span id='subtotal' ><?php  echo $products[0]->price; ?></span>
 				</td>
 			</tr>
-			<tr>
-				<td>Shipping and Handling
+			<tr >
+				<td style='border-bottom:1px solid gray' >Shipping and Handling
 				</td>
-				<td><span id='shipping_handling' amt='<?php  echo $products[0]->shipping_handling;     ?>'><?php  echo $products[0]->shipping_handling;     ?>
+				<td  style='border-bottom:1px solid gray'   ><?php  echo $products[0]->shipping_handling;     ?>
 				</td>
 			</tr>
 			<tr>
 				<td>Your Total is
 				</td>
-				<td>
+				<td>$<span id='total' ><?php  echo $products[0]->price + $products[0]->shipping_handling;     ?></span>
 				</td>
 			</tr>
 		</table>		
 		
 	</div>
 	
-	<div  class='span-14 last ' >
+	<div  class='span-14 last '     >
 		
-	<table  >
+	<table      >
 			<tr>
 				<td>How are you Paying?
 				</td>
@@ -169,7 +183,7 @@
 		
 	</div>
 		
-		
+
 </div>
 </body>
 <?php

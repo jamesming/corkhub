@@ -16,7 +16,7 @@
 	<div  class=' container' >
 		
 		<div  class='span-12 ' >
-				<img id='logo'  class='cursor_pointer '  src='<?php echo  base_url();   ?>images/Titlelogo.png'>
+				<img id='logo'  class='cursor_pointer '  src='<?php echo  base_url();   ?>images/logo.png'>
 		</div>
 		<div  class='span-12 last '  >
 			

@@ -46,7 +46,7 @@ color:darygray
 
 			<div  class='container'   style='padding-bottom:50px'  >
 				
-				<div  class='span-7 ' >
+				<div  class='span-6 ' >
 					
 					<table>
 						<tr>
@@ -57,15 +57,16 @@ color:darygray
 						</tr>
 						<tr>
 							<td  class='side_text ' colspan=2>
-								The CorkHub is the online wine store
-											
-											with the best wine deals from the best
-											
-											wineries. We sell on their behalf at the
-											
-											best price available and they ship it to
-											
-											you. 
+CorkHub is the <b>new online buying
+
+experience in fine wines</b>,
+
+bringing the best wine deals from
+
+the best wineries.  
+ 
+        
+ 
 							</td>
 						</tr>
 						
@@ -79,9 +80,9 @@ color:darygray
 						</tr>
 						<tr>
 							<td   class='side_text ' colspan=2>
-					Wineries need to open space for the
-								
-								next vintage, and we help them out. 
+Wineries need to open space for the next
+
+vintage, and we help them out. 
 							</td>
 						</tr>
 						
@@ -94,11 +95,17 @@ color:darygray
 						</tr>
 						<tr>
 							<td   class='side_text ' colspan=2>
-					We protect our partner’s brand value
-								
-								and we want you to focus on what’s
-								
-								important.
+					The deals we get you in fine wines are
+
+unique. We protect wineries brands value
+
+and make that an opportunity to showcase
+
+other important facts about great wines.
+
+The bottle you get comes as you would
+
+find it at the store.
 							</td>
 						</tr>
 					
@@ -120,10 +127,10 @@ color:darygray
 					
 				</div>
 				
-				<div class='span-16 last'   style='padding-left:40px'   >
+				<div class='span-17 last'     >
 						<table>
 							<tr>
-								<td width='35%'>
+								<td width='35%'   style='padding-right:15px'  >
 									<div id="bottle"><div id="infographic"></div></div>
 								</td>
 								<td width='65%'>
@@ -132,7 +139,7 @@ color:darygray
 									
 <table    >
 	<tr>
-		<td style='font-size:50px;color:#9FB200;line-height: 1.2;' >
+		<td style='font-size:50px;color:#8DB445;line-height: 1.2;' >
 									  Today's 
 									  Selection:
 		</td>
@@ -198,7 +205,7 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 	
 	
 	<tr>
-		<td  style='font-size:34px;color:#9FB200;padding-top:11px' >
+		<td  style='font-size:34px;color:#8DB445;padding-top:11px' >
 			
 <b>OUR PRICE: $28.40</b>
 
@@ -277,7 +284,7 @@ id="countdown_sec"></div><div>Seconds</div></li>
 			
 <div class="oldwines">
    <div id="Merlot"><img src="<?php echo  base_url();   ?>images/Bottle-Final.png"><span>Merlot:<br><br>Retail: $40<br>Our Price: $20<br><br><font color="red">SOLD OUT</font></span></div>
-   <div id="Resling"><img src="<?php echo  base_url();   ?>images/Bottle-Final.png"><span>Resling:<br><br>Retail: $45<br>Our Price: $22<br><br><font color="red">SOLD OUT</font></span></div>
+   <div id="Resling"><img src="<?php echo  base_url();   ?>images/Bottle-Final.png"><span>Reisling:<br><br>Retail: $45<br>Our Price: $22<br><br><font color="red">SOLD OUT</font></span></div>
    <div id="Shiraz"><img src="<?php echo  base_url();   ?>images/Bottle-Final.png"><span>Shiraz:<br><br>Retail: $48<br>Our Price: $30<br><br><font color="red">SOLD OUT</font></span></div>
 </div>
 		

@@ -26,11 +26,10 @@
 							<td   style='
 								vertical-align:bottom;
 								height:120px;
-								font-weight:bold;
+								font-size:12x;
 								color:white;
-								font-size:18px;
 								text-align:right;
-								height:
+								letter-spacing:4px;
 								' >GO ON A BLIND DATE WITH WINE, EVERY WEEK.
 							</td>
 						</tr>

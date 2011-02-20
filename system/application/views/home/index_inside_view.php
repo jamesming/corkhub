@@ -15,7 +15,13 @@
 	color:lightblue;
 	vertical-align:bottom;
 	height:60px;
-	'       >login here 
+	'       >
+	
+	<a href='<?php echo base_url();    ?>index.php/authenticate/signin'>
+login here</a> / or 
+	
+	
+	<a href='<?php echo base_url();    ?>index.php/authenticate/register'>register</a>
 	</div>
 	
 	

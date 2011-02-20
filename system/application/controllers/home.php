@@ -50,10 +50,27 @@ class Home extends Controller {
 
 function index(){
 
-	$data['controller'] = 'home';
+	if( isset($this->session->userdata['user_id']) ){
+		$loggedin = TRUE;
+		
+		
+		$select_what =  'firstname, lastname';
+		
+		$where_array = array('id' => $this->session->userdata['user_id']);
 	
-	//$this->load->view('home/index_view', $data);
+		$table  = 'users';
+		
+		$users = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array, $use_order = FALSE, $limit = 1 );
 
+		
+	}else{
+		$loggedin = FALSE;
+		
+		$users ='';
+		
+	};
+
+	$data['controller'] = 'home';
 
 	$select_what =  'ph, acid, alcohol, vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
 	
@@ -63,10 +80,9 @@ function index(){
 	
 	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array, $use_order = FALSE, $limit = 1 );
 
-	$data= array('products'  => $products);	
+	$data= array('products'  => $products, 'loggedin'  => $loggedin, 'users' => $users);	
 
-	
-	$this->load->view('home/index_inside_view', $data);
+	$this->load->view('home/index_view', $data);
  
 }
 	

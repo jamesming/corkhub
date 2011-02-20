@@ -24,6 +24,7 @@
 	$this->load->view('header/top_view.php');
 	
 ?>
+	<link href="<?php echo  base_url();   ?>resources/css/ext.css" media="screen" rel="stylesheet" type="text/css">
 
 <style>
 .side_header{
@@ -123,7 +124,7 @@ color:darygray
 						<table>
 							<tr>
 								<td width='35%'>
-									<img src='<?php echo base_url();    ?>/images/Bottle-Final.png'>
+									<div id="bottle"><div id="infographic"></div></div>
 								</td>
 								<td width='65%'>
 									
@@ -131,8 +132,8 @@ color:darygray
 									
 <table    >
 	<tr>
-		<td style='font-size:59px;color:#9FB200;line-height: 1.2;' >
-									  Today's<br>
+		<td style='font-size:50px;color:#9FB200;line-height: 1.2;' >
+									  Today's 
 									  Selection:
 		</td>
 	</tr>
@@ -177,7 +178,7 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 		<td  style='font-size:17px;' >
 			
 
-	<b>RETAIL PRICE:  $35</b>
+	<b>RETAIL PRICE:  $40</b>
 
 		</td>
 		
@@ -188,7 +189,7 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 	<tr>
 		<td  style='font-size:17px;' >
 			
-<b>LOWEST PRICE ONLINE:</b><span  style='color:red'  ><b>$30</b></span>
+<b>LOWEST PRICE ONLINE:</b><span  style='color:red'  ><b>$33</b></span>
 		</td>
 		
 		
@@ -199,7 +200,7 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 	<tr>
 		<td  style='font-size:34px;color:#9FB200;padding-top:11px' >
 			
-<b>OUR PRICE: $20</b>
+<b>OUR PRICE: $28.40</b>
 
 		</td>
 		
@@ -228,13 +229,33 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 </table>
 
 									
-									
+									<br>
+						<div >
+                       <div id="counter" class="counter">
+                               <ul class="countdown">
+                                       <li><div class="countdown_num"
+id="countdown_day"></div><div>Days</div></li>
+                                       <li><div class="countdown_num"
+id="countdown_hour"></div><div>Hours</div></li>
+                                       <li><div class="countdown_num"
+id="countdown_min"></div><div>Minutes</div></li>
+                                       <li><div class="countdown_num"
+id="countdown_sec"></div><div>Seconds</div></li>
+                               </ul>
+                       </div>
+                       <div id="expired" style="display:none;">
+                               The deadline has passed.
+                       </div>
+               </div>
 
 										
 								</td>
 
 							</tr>
 						</table>
+						
+
+						
 				</div>
 			
 				
@@ -244,71 +265,21 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 </div>
 
 <div     style='
-	height:540px;
 	background:#550F0D'>
 	
 		<div class='container'    >
 			
-			<div   style='padding:10px 10px;font-size:40px;color:white'  >
+			<div   style='padding:10px 35px 10px 10px;font-size:40px;color:white;float:left'  >
 				Past Selections:
 			</div>
 			
+
 			
-<style>
-	table#past td{
-	color:white;
-	font-size:27px;
-	vertical-align:middle;
-	padding:10px;
-	}
-	.image_past_wine_td{
-	background:white;
-	padding:9px 0px;
-	width:150px;
-	}
-</style>
-			
-			
-			
-			<table id='past'>
-				<tr>
-					<td align="center"   >
-						<div  class='image_past_wine_td ' >
-							<img src='<?php echo base_url();    ?>/images/Past-1.png'>
-						</div>
-						
-					</td>
-					<td align="center"   >
-						<div  class='image_past_wine_td ' >
-							<img src='<?php echo base_url();    ?>/images/Past-2.png'>
-						</div>
-						
-					</td>
-					<td align="center"   >
-						<div  class='image_past_wine_td ' >
-							<img src='<?php echo base_url();    ?>/images/Past-3.png'>
-						</div>
-						
-					</td>
-					<td align="center"   >
-						<div  class='image_past_wine_td ' >
-							<img src='<?php echo base_url();    ?>/images/Past-4.png'>
-						</div>
-						
-					</td>
-				</tr>
-				<tr>
-					<td align="center" ><span   style='font-size:15px'  >Retail Price $35</span><br><span   style='font-size:22px'  >Our price $15</span><br><span   style='font-size:22px;color:red;font-weight:bold'   >SOLD OUT</span>
-					</td>
-					<td align="center" ><span   style='font-size:15px'  >Retail Price $53</span><br><span   style='font-size:22px'  >Our price $40</span><br><span   style='font-size:22px;color:red;font-weight:bold'   >SOLD OUT</span>
-					</td>
-					<td align="center" ><span   style='font-size:15px'  >Retail Price $41</span><br><span   style='font-size:22px'  >Our price $30</span><br><span   style='font-size:22px;color:red;font-weight:bold'   >SOLD OUT</span>
-					</td>
-					<td align="center" ><span   style='font-size:15px'  >Retail Price $32</span><br><span   style='font-size:22px'  >Our price $24</span><br><span   style='font-size:22px;color:red;font-weight:bold'   >SOLD OUT</span>
-					</td>
-				</tr>
-			</table>
-			
+<div class="oldwines">
+   <div id="Merlot"><img src="<?php echo  base_url();   ?>/images/Bottle-final.png"><span>Merlot:<br><br>Retail: $40<br>Our Price: $20<br><br><font color="red">SOLD OUT</font></span></div>
+   <div id="Resling"><img src="<?php echo  base_url();   ?>/images/Bottle-final.png"><span>Resling:<br><br>Retail: $45<br>Our Price: $22<br><br><font color="red">SOLD OUT</font></span></div>
+   <div id="Shiraz"><img src="<?php echo  base_url();   ?>/images/Bottle-final.png"><span>Shiraz:<br><br>Retail: $48<br>Our Price: $30<br><br><font color="red">SOLD OUT</font></span></div>
+</div>
 		
 		</div>	
 	
@@ -316,6 +287,9 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 
 
 </body>
+	<script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/ext-core-debug-min.js"></script>
+	<script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/ext-all-debug-min.js"></script>
+	<script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/Info.js"></script>
 <?php
 /* End of file myfile.php */ 
 /* Location: ./system/modules/mymodule/myfile.php */ 

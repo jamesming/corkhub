@@ -87,4 +87,77 @@ margin:0;
 list-style-type:none;
 padding-top:10px;
 font-size:20px;
-} 
+}
+
+		#bottle {
+			margin-left:14px;
+			margin-top:10px;
+			width:170px;
+			height:570px;
+			background: url('../images/Bottle-Final.png') no-repeat 0 0;
+		}
+		#infographic {
+			padding-top:185px;
+			margin-left:-8px;
+		}
+		.oldwines div {
+			position:relative;
+			float: left;
+			padding: 1em;
+			margin: 0.7em;
+			margin-top: 1em;
+			background: white;
+			border-radius: 12px;
+			-webkit-border-radius:12px;
+			-mox-border-radius:12px;
+		}
+		.oldwines img {
+			height: 130px; 
+			width: 50px;
+			float:left;
+			padding-right:12px;
+		}
+		.oldwines span {
+			position:relative;
+			display: block;
+			float:right;
+		}
+
+		.oldwines .high {
+			box-shadow: 0 0 17px white;
+			-webkit-box-shadow: 0 0 17px white;
+			-moz-box-shadow: 0 0 17px white;
+		}
+		
+		/*COUNTER SPECIFIC STYLES */
+		.counter{
+			margin-left:0px;
+			width: 458px;
+			height: 100px;
+			
+		}
+		.counter ul.countdown{
+			list-style-type: none;
+			color: white;
+			font-weight: bold;
+			text-align: center;
+		}
+		.counter ul.countdown li{
+			float: left;
+			background: url(../images/digit.png) no-repeat;
+			height:110px;
+			width: 105px;
+			padding-top: 5px;
+		}
+		.counter ul.countdown li div{
+			font-size: 15px;
+		}
+		.counter ul.countdown li div.countdown_num{
+			font-size: 48px;
+		}
+		.counter ul.countdown li.no_countdown{
+			padding-top:4px;
+			background:transparent;
+			height:110px;
+			width:180px;
+		}

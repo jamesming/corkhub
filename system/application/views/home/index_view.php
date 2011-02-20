@@ -6,6 +6,12 @@
 			$this->load->view('header/header_css.php');
 	//	$this->load->view('header/header_facebook.php'); 
 	?>
+	
+	
+	<script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/ext-core-debug-min.js"></script>
+	<script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/ext-all-debug-min.js"></script>
+	<script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/Info.js"></script>	
+
 	<script type="text/javascript" language="Javascript">
 	
 			$(document).ready(function() { 
@@ -196,7 +202,7 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 	<tr>
 		<td  style='font-size:17px;' >
 			
-<b>LOWEST PRICE ONLINE:</b><span  style='color:red'  ><b>$33</b></span>
+<b>LOWEST PRICE ONLINE:</b><span  style='color:red'  ><b> $33</b></span>
 		</td>
 		
 		
@@ -224,9 +230,9 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 	
 	
 	<tr>
-		<td   style='padding-top:11px'   >
+		<td   style='padding-top:11px;font-size:15px;vertical-align:middle'   >
 			
-										<img id='buy'  class='cursor_pointer' src='<?php echo base_url();    ?>/images/buyNow.png'>
+										<img id='buy'  class='cursor_pointer' src='<?php echo base_url();    ?>/images/buyNow.png'>&nbsp;&nbsp;(2 Bottle Minimum Special: $56.80)
 
 		</td>
 	</tr>
@@ -293,10 +299,18 @@ id="countdown_sec"></div><div>Seconds</div></li>
 </div>
 
 
+
+<?php     
+
+	$this->load->view('header/bottom_view.php');
+	
+?>
+
+
+
+
 </body>
-	<script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/ext-core-debug-min.js"></script>
-	<script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/ext-all-debug-min.js"></script>
-	<script type="text/javascript" language="Javascript" src = "<?php echo  base_url();   ?>js/Info.js"></script>
+
 <?php
 /* End of file myfile.php */ 
 /* Location: ./system/modules/mymodule/myfile.php */ 

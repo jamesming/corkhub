@@ -32,10 +32,12 @@ background:darkbrown;
 font-weight:bold;
 font-size:20px;	
 vertical-align:center;
-padding-left:5px;
+padding-left:12px;
 }
 .side_text{
 padding:5px 0px 20px 0px;
+font-size:17px;	
+color:darygray
 }
 </style>
 
@@ -47,7 +49,7 @@ padding:5px 0px 20px 0px;
 					
 					<table>
 						<tr>
-							<td><img id='buy'  class='cursor_pointer' src='<?php echo base_url();    ?>/images/Number1-Icon.png'>
+							<td><img  class='cursor_pointer' src='<?php echo base_url();    ?>/images/Number1-Icon.png'>
 							</td>
 							<td   class=' side_header'>What is CorkHub?
 							</td>
@@ -69,7 +71,7 @@ padding:5px 0px 20px 0px;
 					
 					
 						<tr>
-							<td><img id='buy'  class='cursor_pointer' src='<?php echo base_url();    ?>/images/Number2-Icon.png'>
+							<td><img   class='cursor_pointer' src='<?php echo base_url();    ?>/images/Number2-Icon.png'>
 							</td>
 							<td    class=' side_header' >Why the discount? 
 							</td>
@@ -84,7 +86,7 @@ padding:5px 0px 20px 0px;
 						
 						
 						<tr>
-							<td><img id='buy'  class='cursor_pointer' src='<?php echo base_url();    ?>/images/Number3-Icon.png'>
+							<td><img  class='cursor_pointer' src='<?php echo base_url();    ?>/images/Number3-Icon.png'>
 							</td>
 							<td    class=' side_header' >Why can’t I see the label now?
 							</td>
@@ -121,28 +123,116 @@ padding:5px 0px 20px 0px;
 						<table>
 							<tr>
 								<td width='35%'>
-									<img src='<?php  echo base_url() . '/uploads/' . $products[0]->vendor_id . '/' . $products[0]->id . '/image.png'  ?>'>
+									<img src='<?php echo base_url();    ?>/images/Bottle-Final.png'>
 								</td>
-								<td width='35%'>
-									<p    style='font-size:50px;'  >
-									<?php echo $products[0]->name;    ?>
-									</p>
-									<p   style='font-size:44px;'  >
-									$<?php echo $products[0]->price;    ?> <span   style='font-size:14px;'  >plus   <?php  echo $products[0]->shipping_handling;   ?>&nbsp;shipping and handling.</span>
-									</p>	
-									<p   style='font-size:17px;'  >
-									Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->acid;    ?>/Acid:<?php echo $products[0]->alcohol;    ?>
-									</p>		
+								<td width='65%'>
+									
+									
+									
+<table    >
+	<tr>
+		<td style='font-size:59px;color:#9FB200;line-height: 1.2;' >
+									  Today's<br>
+									  Selection:
+		</td>
+	</tr>
+	<tr>
+		<td  style='font-size:17px;padding-top:8px;' >
+
+									<b>ABOUT THIS WINE</b>
+			
+		</td>
+	</tr>
+	<tr>
+		<td  style='font-size:17px;'  >
+
+									<?php echo $products[0]->description;    ?>
+
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td    style='font-size:11px;' >
+			
+Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->acid;    ?>/Acid:<?php echo $products[0]->alcohol;    ?>
+
+		</td>
+	</tr>
+	
+	
+	
+	
+	<tr>
+		<td  style='font-size:22px;padding-top:9px' >
+			
+
+									<b><?php echo $products[0]->name;    ?></b>
+
+		</td>
+	</tr>
+	<tr>
+		<td  style='font-size:17px;' >
+			
+
+	<b>RETAIL PRICE:  $35</b>
+
+		</td>
+		
+		
+	</tr>
+	
+	
+	<tr>
+		<td  style='font-size:17px;' >
+			
+<b>LOWEST PRICE ONLINE:</b><span  style='color:red'  ><b>$30</b></span>
+		</td>
+		
+		
+	</tr>	
+	
+	
+	
+	<tr>
+		<td  style='font-size:34px;color:#9FB200;padding-top:11px' >
+			
+<b>OUR PRICE: $20</b>
+
+		</td>
+		
+		
+	</tr>	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	<tr>
+		<td   style='padding-top:11px'   >
+			
+										<img id='buy'  class='cursor_pointer' src='<?php echo base_url();    ?>/images/buyNow.png'>
+
+		</td>
+	</tr>
+		
+	
+	
+</table>
+
+									
+									
+
+										
 								</td>
-								<td align='center' style='vertical-align:middle;font-size:44px;color:gray'  >
-									
-									
-						<img id='buy'  class='cursor_pointer' src='<?php echo base_url();    ?>/images/buyNow.png'>
-									
-									
-						
-									
-								</td>
+
 							</tr>
 						</table>
 				</div>
@@ -156,7 +246,7 @@ padding:5px 0px 20px 0px;
 
 <div class='container'   style='font-size:24px;color:gray'  >
 	
-	<?php echo $products[0]->description;    ?>
+	BOTTOM
 	
 </div>
 

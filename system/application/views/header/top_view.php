@@ -28,7 +28,7 @@
 								height:120px;
 								font-weight:bold;
 								color:white;
-								font-size:15px;
+								font-size:18px;
 								text-align:right;
 								height:
 								' >GO ON A BLIND DATE WITH WINE, EVERY WEEK.

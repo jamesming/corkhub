@@ -276,9 +276,9 @@ id="countdown_sec"></div><div>Seconds</div></li>
 
 			
 <div class="oldwines">
-   <div id="Merlot"><img src="<?php echo  base_url();   ?>images/Bottle-final.png"><span>Merlot:<br><br>Retail: $40<br>Our Price: $20<br><br><font color="red">SOLD OUT</font></span></div>
-   <div id="Resling"><img src="<?php echo  base_url();   ?>images/Bottle-final.png"><span>Resling:<br><br>Retail: $45<br>Our Price: $22<br><br><font color="red">SOLD OUT</font></span></div>
-   <div id="Shiraz"><img src="<?php echo  base_url();   ?>images/Bottle-final.png"><span>Shiraz:<br><br>Retail: $48<br>Our Price: $30<br><br><font color="red">SOLD OUT</font></span></div>
+   <div id="Merlot"><img src="<?php echo  base_url();   ?>images/Bottle-Final.png"><span>Merlot:<br><br>Retail: $40<br>Our Price: $20<br><br><font color="red">SOLD OUT</font></span></div>
+   <div id="Resling"><img src="<?php echo  base_url();   ?>images/Bottle-Final.png"><span>Resling:<br><br>Retail: $45<br>Our Price: $22<br><br><font color="red">SOLD OUT</font></span></div>
+   <div id="Shiraz"><img src="<?php echo  base_url();   ?>images/Bottle-Final.png"><span>Shiraz:<br><br>Retail: $48<br>Our Price: $30<br><br><font color="red">SOLD OUT</font></span></div>
 </div>
 		
 		</div>	

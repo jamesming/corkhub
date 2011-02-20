@@ -27,7 +27,7 @@
 
 <div  class='container '    style='font-size:15px'  >
 	
-	You just bought it.  Your were charged $<?php echo $charged;    ?> on your credit card. Don't drink and drive.
+	You just bought it.  Your were charged $<?php echo $amount;    ?> on your credit card. Don't drink and drive.
 		
 
 </div>

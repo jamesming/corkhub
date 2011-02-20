@@ -156,12 +156,14 @@ function buy_form(){
 function bought(){
 	
 	if( isset($this->session->userdata['user_id']) ){
+		
 		$loggedin = TRUE;
 		
+		$user_id = $this->session->userdata['user_id'];
 		
 		$select_what =  'firstname, lastname';
 		
-		$where_array = array('id' => $this->session->userdata['user_id']);
+		$where_array = array('id' => $user_id);
 	
 		$table  = 'users';
 		
@@ -171,24 +173,48 @@ function bought(){
 	}else{
 		$loggedin = FALSE;
 		
+		$insert_what = array(
+										'email' => $email
+		            );
+		
+		$last_inserted_id = $this->my_database_model->insert_table($table = 'users', $insert_what);
+
+		
 		$users ='';
 		
 	};
 	
-	$select_what =  'ph, acid, alcohol, vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
 	
-	$where_array = array('id' => 25);
-
-	$table  = 'products';
 	
-	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array, $use_order = FALSE, $limit = 1 );
-
+	
+	
 
 	$quantity = $this->input->post('quantity');
 	
-	$charged = ($quantity * $products[0]->price) + $products[0]->shipping_handling;
+	$amount = ($quantity * $this->products[0]->price) + $this->products[0]->shipping_handling;
 	
-	$data= array('charged'  => $charged, 'products'  => $products, 'loggedin'  => $loggedin, 'users'  => $users);
+	$insert_what = array(
+	'amount' => $amount,
+	'user_id' => $user_id,
+	'product_id' => $this->products[0]->id,
+	'amount' => $amount,
+	'quantity' => $quantity,
+	);
+	
+	$primary_key = $this->my_database_model->insert_table(
+									$table = 'users_vendors', 
+									$insert_what
+									);
+									
+	
+	
+	
+	
+	
+	
+	
+	
+	$data= array('amount'  => $amount, 'products'  => $this->products, 'loggedin'  => $loggedin, 'users'  => $users);
 	
 	$this->load->view('buy/bought_view', $data);
 }

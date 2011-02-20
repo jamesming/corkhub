@@ -9,31 +9,40 @@
 	</script>
 
 
-<div  class='container'>
-	
-	<div  id='logo' class='span-7 cursor_pointer'     style='
-	font-size:60px;
-	color:darkorange;
-	'       >Corkhub
+<div    style='
+	height:140px;
+	background:#550F0D'
+	  >
+	<div  class=' container' >
+		
+		<div  class='span-12 ' >
+				<img id='logo'  class='cursor_pointer '  src='<?php echo  base_url();   ?>images/Titlelogo.png'>
+		</div>
+		<div  class='span-12 last '  >
+			
+			
+					<table>
+						<tr>
+							<td   style='
+								vertical-align:bottom;
+								height:120px;
+								font-weight:bold;
+								color:white;
+								font-size:15px;
+								text-align:right;
+								height:
+								' >GO ON A BLIND DATE WITH WINE, EVERY WEEK.
+							</td>
+						</tr>
+					</table>
+			
+		</div>		
+		
 	</div>
-	
 
 	
-	
-	<div  class='span-10 last '       style='
-	font-size:16px;
-	color:blue;
-	vertical-align:bottom;
-	height:60px;
-	'       >
-today's cork&nbsp;&nbsp;&nbsp;
-blog&nbsp;&nbsp;&nbsp;
-community&nbsp;&nbsp;&nbsp;
-write us&nbsp;&nbsp;&nbsp;
-about&nbsp;&nbsp;&nbsp;
-	</div>	
-	
-	
+</div>	
+<!--
 	
 	<div  class='span-7 '       style='
 	font-size:16px;
@@ -65,9 +74,17 @@ about&nbsp;&nbsp;&nbsp;
 	
 
 	</div>
-	</div>
+  -->
 	
 	
 
+<div   style='background:#F1F0C4'  >
+	<div   style='height:14px;background:url(<?php echo  base_url();   ?>images/shadow.png) repeat-x'  >
+		
+	
+	</div>	
+</div>
 
-<hr   style='height:3px'  >
+
+	
+

@@ -23,9 +23,7 @@
 
 <body>
 
-	<div class='container'   style='padding:100px 0 0 0 ;'  >
-	</div>
-	
+
 	
 	<div class='container'  id='insideDiv' style='height:400px;'  >test
 	</div>

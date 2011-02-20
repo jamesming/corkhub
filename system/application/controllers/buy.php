@@ -53,7 +53,6 @@ function index(){
 	if( isset($this->session->userdata['user_id']) ){
 		$loggedin = TRUE;
 		
-		
 		$select_what =  'firstname, lastname';
 		
 		$where_array = array('id' => $this->session->userdata['user_id']);
@@ -71,7 +70,6 @@ function index(){
 	};
 
 	$data['controller'] = 'buy';
-
 
 	$this->load->view('buy/index_view', $data);
  
@@ -91,43 +89,58 @@ function index(){
 
 function index_inside(){
 	
-	$this->load->view('buy/index_inside_view');
+
 
 }
 
 
 
 /**
- * vendor_form
+ * buy_form
  *
  * {@source }
  * @package BackEnd
  * @author James Ming <jamesming@gmail.com>
- * @path /index.php/buy/vendor_form
+ * @path /index.php/home/buy_form
  * @access public
+ * @codeigniter_library form_validation
  **/ 
 
-function vendor_form(){
+function buy_form(){
 	
-	$vendor_id = $this->uri->segment(3);
+	if( isset($this->session->userdata['user_id']) ){
+		$loggedin = TRUE;
+		
+		
+		$select_what =  'firstname, lastname';
+		
+		$where_array = array('id' => $this->session->userdata['user_id']);
 	
-	$select_what =  'name, id';
+		$table  = 'users';
+		
+		$users = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array, $use_order = FALSE, $limit = 1 );
+
+		
+	}else{
+		$loggedin = FALSE;
+		
+		$users ='';
+		
+	};
 	
-	$where_array = array('id' =>  $vendor_id );
-
-	$table  = 'vendors';
+	$select_what =  'ph, acid, alcohol, vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
 	
-	$vendors = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array );
+	$where_array = array('id' => 25);
 
-	$data= array('vendors'  => $vendors);	
+	$table  = 'products';
 	
-	$this->load->view('buy/vendor_form_view', $data);
-
-}  
+	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array, $use_order = FALSE, $limit = 1 );
 
 
-
-
+	$data= array('products'  => $products, 'loggedin'  => $loggedin, 'users'  => $users);
+	
+	$this->load->view('buy/buy_form_view', $data);
+}
 	
 }
 

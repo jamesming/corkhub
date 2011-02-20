@@ -467,13 +467,14 @@ function reset_password(){
 	
 
 
+
 /**
  * User clicks on link from email to confirms registration, activation code matched in database, field activated int set to 1.
  *
  * {@source }
  * @package BackEnd
  * @author James Ming <jamesming@gmail.com>
- * @path /index.php/authenticate/register_confirm
+ * @path /index.php/home/register_confirm
  * @access public
  * @uses My_database_model::check_if_exist()
  * @uses My_database_model::update_table()
@@ -517,6 +518,23 @@ function register_confirm(){
 }
 
 
+/**
+ * logout
+ *
+ * {@source }
+ * @package BackEnd
+ * @author James Ming <jamesming@gmail.com>
+ * @path /index.php/authenticate/logout
+ * @access public
+ **/ 
+
+function logout(){
+	
+	$this->session->sess_create();
+	redirect('/home/index', 'refresh');	
+	
+	
+}
 
 
 

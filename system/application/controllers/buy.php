@@ -23,18 +23,24 @@
  * 
  */
 class Buy extends Controller {
+	
+	
+	private $products;
 
 	function Buy(){
 		parent::Controller();
 
+		$select_what =  'ph, acid, alcohol, vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
+		
+		$where_array = array('show' => 1);
+	
+		$table  = 'products';
+		
+		$this->products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array, $use_order = FALSE, $limit = 1 );
+
 	}
 	
   
-/*
-|--------------------------------------------------------------------------
-|                       VIEW SECTION 
-|--------------------------------------------------------------------------
-*/
 
 
 /**
@@ -128,16 +134,8 @@ function buy_form(){
 		
 	};
 	
-	$select_what =  'ph, acid, alcohol, vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
-	
-	$where_array = array('id' => 25);
 
-	$table  = 'products';
-	
-	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array, $use_order = FALSE, $limit = 1 );
-
-
-	$data= array('products'  => $products, 'loggedin'  => $loggedin, 'users'  => $users);
+	$data= array('products'  => $this->products, 'loggedin'  => $loggedin, 'users'  => $users);
 	
 	$this->load->view('buy/buy_form_view', $data);
 }
@@ -186,7 +184,11 @@ function bought(){
 	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array, $use_order = FALSE, $limit = 1 );
 
 
-	$data= array('products'  => $products, 'loggedin'  => $loggedin, 'users'  => $users);
+	$quantity = $this->input->post('quantity');
+	
+	$charged = ($quantity * $products[0]->price) + $products[0]->shipping_handling;
+	
+	$data= array('charged'  => $charged, 'products'  => $products, 'loggedin'  => $loggedin, 'users'  => $users);
 	
 	$this->load->view('buy/bought_view', $data);
 }

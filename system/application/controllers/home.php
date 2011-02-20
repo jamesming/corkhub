@@ -23,10 +23,20 @@
  * 
  */
 class Home extends Controller {
+	
+	private $products;
 
 	function Home(){
 		parent::Controller();
-
+		
+		$select_what =  'ph, acid, alcohol, vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
+		
+		$where_array = array('show' => 1);
+	
+		$table  = 'products';
+		
+		$this->products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array, $use_order = FALSE, $limit = 1 );
+		
 	}
 	
   
@@ -72,15 +82,7 @@ function index(){
 
 	$data['controller'] = 'home';
 
-	$select_what =  'ph, acid, alcohol, vendor_id, name, id, description, attribute, price, discount, year, rating, shipping_handling, quantity';
-	
-	$where_array = array('id' => 25);
-
-	$table  = 'products';
-	
-	$products = (array) $this->my_database_model->select_from_table( $table, $select_what, $where_array, $use_order = FALSE, $limit = 1 );
-
-	$data= array('products'  => $products, 'loggedin'  => $loggedin, 'users' => $users);	
+	$data= array('products'  => $this->products, 'loggedin'  => $loggedin, 'users' => $users);	
 
 	$this->load->view('home/index_view', $data);
  

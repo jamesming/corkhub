@@ -49,7 +49,7 @@ about&nbsp;&nbsp;&nbsp;
 			Welcome <?php echo $users[0]->firstname . ' ' . $users[0]->lastname;    ?>&nbsp;&nbsp;&nbsp;
 			
 			
-			<a href='<?php echo base_url();    ?>index.php/authenticate/signin'>
+			<a href='<?php echo base_url();    ?>index.php/authenticate/logout'>
 			logout</a>
 
 <?php }else{?>

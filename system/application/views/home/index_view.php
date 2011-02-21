@@ -104,7 +104,7 @@ vintage, and we help them out.
 No worries! You will see the label when
 you get your wine. But, our deals are
 so great that we have to keep brands
-a secret to protect them. Instead, we
+a secret to protect them online. Instead, we
 showcase taste attributes of wine creating 
 an innovative online buying experience.
 							</td>

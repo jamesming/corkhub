@@ -24,13 +24,23 @@
 	
 ?>
 
-
-<div  class='container '    style='font-size:15px'  >
-	
-<script src="https://www-sgw-opensocial.googleusercontent.com/gadgets/ifr?url=https%3A%2F%2Fstoregadgetwizard.appspot.com%2Fservlets%2FgadgetServlet%3Fkey%3D0Aklfz5z5VE02dEFBUll4SHc3WHk1TlZFN3pBLXVTWVE%26mid%3D230919259020477%26currency%3DUSD%26sandbox%3Dfalse%26gadget%3DLARGE&amp;container=storegadgetwizard&amp;w=800&amp;h=500&amp;title=&amp;brand=none&amp;output=js"></script>
+<div   style='background:#F1F0C4'  >
+	<div  class='container '    style='font-size:15px;padding-top:60px'  >
 		
-
+	<script src="https://www-sgw-opensocial.googleusercontent.com/gadgets/ifr?url=https%3A%2F%2Fstoregadgetwizard.appspot.com%2Fservlets%2FgadgetServlet%3Fkey%3D0Aklfz5z5VE02dEFBUll4SHc3WHk1TlZFN3pBLXVTWVE%26mid%3D230919259020477%26currency%3DUSD%26sandbox%3Dfalse%26gadget%3DLARGE&amp;container=storegadgetwizard&amp;w=800&amp;h=500&amp;title=&amp;brand=none&amp;output=js"></script>
+			
+	
+	</div>	
+	
 </div>
+
+
+
+<?php     
+
+	$this->load->view('header/bottom_view.php');
+	
+?>
 </body>
 <?php
 /* End of file myfile.php */ 

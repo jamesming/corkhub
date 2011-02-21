@@ -50,7 +50,7 @@ color:darygray
 
 <div   style='background:#F1F0C4'  >
 
-			<div  class='container'   style='padding-bottom:50px'  >
+			<div  class='container'   style='padding-bottom:20px'  >
 				
 				<div  class='span-6 ' >
 					

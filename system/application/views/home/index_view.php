@@ -105,8 +105,8 @@ No worries! You will see the label when
 you get your wine. But, our deals are
 so great that we have to keep brands
 a secret to protect them. Instead, we
-showcase taste attributes of wine and 
-innovate in its online buying experience.
+showcase taste attributes of wine creating 
+an innovative online buying experience.
 							</td>
 						</tr>
 					
@@ -128,7 +128,10 @@ innovate in its online buying experience.
 					
 				</div>
 				
-				<div class='span-17 last'        >
+				<div class='span-17 last'    style='background: white; height: 620px; border-radius: 12px; box-shadow: 0 0
+12px #8DB445; -webkit-border-radius: 12px; -webkit-box-shadow: 0 0
+12px #8DB445;-moz-border-radius: 12px; -moz-box-shadow: 0 0
+12px #8DB445;margin-left: 30px; margin-top: 5px;'        >
 						<table>
 							<tr>
 								<td width='35%'   style='padding-right:15px'  >

@@ -96,22 +96,17 @@ vintage, and we help them out.
 						<tr>
 							<td><img  class='cursor_pointer' src='<?php echo base_url();    ?>/images/Number3-Icon.png'>
 							</td>
-							<td    class=' side_header' >Why can’t I see the label now?
+							<td    class=' side_header' >Why no labels?
 							</td>
 						</tr>
 						<tr>
 							<td   class='side_text ' colspan=2>
-					The deals we get you in fine wines are
-
-unique. We protect wineries brands value
-
-and make that an opportunity to showcase
-
-other important facts about great wines.
-
-The bottle you get comes as you would
-
-find it at the store.
+No worries! You will see the label when
+you get your wine. But, our deals are
+so great that we have to keep brands
+a secret to protect them. Instead, we
+showcase taste attributes of wine and 
+innovate in its online buying experience.
 							</td>
 						</tr>
 					
@@ -222,7 +217,12 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 	
 	
 	
-	
+	<tr>
+		<td  style='padding-top:2px;font-size:15px;'   >
+			
+(2 Bottle Minimum Special: $56.80)
+		</td>
+	</tr>	
 	
 	
 	
@@ -230,14 +230,14 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 	
 	
 	<tr>
-		<td   style='padding-top:11px;font-size:15px;vertical-align:middle'   >
+		<td  style='padding-top:11px;font-size:15px;'   >
 			
-										<img id='buy'  class='cursor_pointer' src='<?php echo base_url();    ?>/images/buyNow.png'>&nbsp;&nbsp;(2 Bottle Minimum Special: $56.80)
+										<img id='buy'  class='cursor_pointer' src='<?php echo base_url();    ?>/images/buyNow.png'>&nbsp;&nbsp;
 
 		</td>
 	</tr>
 		
-	
+
 	
 </table>
 

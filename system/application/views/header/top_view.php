@@ -18,9 +18,9 @@
 		<div  class='span-12 ' >
 				<img id='logo'  class='cursor_pointer '  src='<?php echo  base_url();   ?>images/logo.png'>
 		</div>
+		
 		<div  class='span-12 last '  >
-			
-			
+		 	
 					<table>
 						<tr>
 							<td   style='

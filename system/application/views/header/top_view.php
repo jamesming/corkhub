@@ -21,18 +21,70 @@
 		
 		<div  class='span-12 last '  >
 		 	
-					<table>
+					<table     >
+						<tr>
+							<td   style='
+								vertical-align:middle;
+								height:95px;
+								color:white;
+								text-align:right;
+								' >
+								
+								<a href='http://unbouncepages.com/corkhub/'  target='_blank' style='color:lightgray; font-size:16px'  >Join our mailing list!</a>
+								
+<!--								
+<form action="http://unbouncepages.com/fsg?pageId=1aa8fede-3c5f-11e0-8e27-12313e003591&variant=a" method="post"> 
+<input  class='input_field' type="text" 
+id="enter_your_email_and_we'll_put_you_on_our_invite_list" 
+name="enter_your_email_and_we'll_put_you_on_our_invite_list" 
+class="text" style="
+top: 0px; 
+left: 0px; 
+width: 220px; 
+font-size: 20px; 
+line-height: 22px; 
+height: 32px; 
+padding-top: 10px; 
+padding-bottom: 0px; 
+padding-left: 5px; 
+padding-right: 0px;
+font-style: italic;
+" 
+value="Get on our invite list..."> 
+<span  class='rounded_border button' onclick=$().submit()  style='
+	
+	font-size:16px;
+	width:50px;
+	display:inline;
+	padding:7px;	
+	
+	'  >
+	GO
+</span>
+</form>
+
+  
+<a href="http://www.twitter.com/corkhub" target="_blank"><img src="<img src="<?php echo base_url();    ?>images/twitter.jpg">"></a> 
+
+<a href="http://www.facebook.com/pages/CorkHub/138601582871736" target="_blank"><img src="<?php echo base_url();    ?>images/facebook.png"></a>
+
+-->
+							</td>
+						</tr>
+						
 						<tr>
 							<td   style='
 								vertical-align:bottom;
-								height:120px;
+								height:20px;
 								font-size:12x;
 								color:white;
 								text-align:right;
 								letter-spacing:4px;
 								' >GO ON A BLIND DATE WITH WINE, EVERY WEEK.
 							</td>
-						</tr>
+						</tr>						
+						
+						
 					</table>
 			
 		</div>		

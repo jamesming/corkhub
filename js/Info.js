@@ -210,7 +210,7 @@ Ext.onReady(function () {
 	}
  
 	//MODIFY THIS LINE: enter the count down date using the format year/month/day
-    countdown(2011, 2, 23);
+    countdown(2011, 2, 28);
 
 
 });

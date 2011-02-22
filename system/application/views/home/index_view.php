@@ -143,9 +143,8 @@ an innovative online buying experience.
 									
 <table    >
 	<tr>
-		<td style='font-size:50px;color:#8DB445;line-height: 1.2;' >
-									  Today's 
-									  Selection:
+		<td style='font-size:45px;color:#8DB445;line-height: 1.2;' >
+									  This Week's Selection:
 		</td>
 	</tr>
 	<tr>

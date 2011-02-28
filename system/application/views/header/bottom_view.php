@@ -1,7 +1,8 @@
 	<script type="text/javascript" language="Javascript">
 	
 			$(document).ready(function() { 
-						$('.iframe_to_edit_div_link').fancyZoom()
+						$('.about_div_link').fancyZoom();
+						$('.terms_div_link').fancyZoom();
 			});
 			 
 	</script>
@@ -193,7 +194,7 @@
 	  >
 	<div  class=' container'   style='text-align:center;padding-top:30px;color:white;'  >
 		
-	<a href="#iframe_to_edit_div"  class="iframe_to_edit_div_link"  style='color:white'  href='<?php echo base_url();    ?>index.php?/home/about'>About</a> &nbsp;&nbsp;<a  style='color:white'  href='mailto:corkhub@gmail.com'>Contact Us</a>&nbsp;&nbsp;&copy;&nbsp;Copyright 2011<br>
+	<a href="#about_div"  class="about_div_link"  style='color:white'  href='<?php echo base_url();    ?>index.php?/home/about'>About</a> &nbsp;&nbsp;<a href="#terms_div"  class="terms_div_link"  style='color:white'  href='<?php echo base_url();    ?>index.php?/home/about'>Terms</a> &nbsp;&nbsp;<a  style='color:white'  href='mailto:corkhub@gmail.com'>Contact Us</a>&nbsp;&nbsp;&copy;&nbsp;Copyright 2011<br>
 		
 	</div>
 
@@ -201,8 +202,19 @@
 </div>	
 
 
-	<div id="iframe_to_edit_div"   style='width:450px;font-size:12px'     >
-<b>CorkHub is the new online buying experience in fine wines</b>, bringing the best wine deals from the best wineries. CorkHub is devoted to bringing you the single best thing in the world, a great bottle of wine.  We are committed to connecting our customers with California’s best wine makers, to deliver premium wines at a tremendous value.  To give our sellers discretion and the opportunity to reach a new audience, we keep the wine label hidden.  No one likes drinking an expensive wine that is defined by name alone.  Our solution, is to sell wines based on taste and attributions, rather than solely name or brand.   <br><br>
-
-Like most wine drinkers, we want to drink a wine, based on its essence, rather than perception. That being said, we have relationships with top wine-makers in California, to help them to get their wine into your belly.   We treat our customers with five star service and only bring them the best and most tastiest wines.  We’re like the Four Seasons for wine, but you have to provide a slippers and the spa.  Whether pairing wine with dinner on a first date, entertaining friends for a party, or drinking wine by yourself, we will deliver a wind that will blow you mind. 
+	<div id="about_div"   style='width:450px;font-size:12px'     >
+<b>CorkHub is the new online buying experience in fine wines</b>, bringing the best wine deals from the best wineries. CorkHub is devoted to bringing you the single best thing in the world, a great bottle of wine. We are committed to connecting our customers with California’s best winemakers, to deliver premium wines at a tremendous value. To give our sellers discretion and the opportunity to reach a new audience, we keep the wine label hidden, but only at the time of purchase. No one likes drinking an expensive wine that is defined by name alone. Our solution, is to sell wines based on taste and attributions, rather than solely name or brand. 
+<br><br>
+Like most wine drinkers, we want to drink a wine, based on its essence, rather than perception. That being said, we have relationships with top wine-makers in California, helping them get their wine into your belly. We treat our customers with five star service and only bring them the best and most tastiest wines. We’re like the Four Seasons for wine, but you have to provide the slippers and the spa. Whether pairing wine with dinner on a first date, entertaining friends for a party, or drinking wine by yourself, we will deliver a wine that will blow you mind.
 	</div>
+	
+	<div id="terms_div"   style='width:450px;font-size:12px'     >
+<b>Return/Cancellation policy:</b><br>
+
+If you are unsatisfied in your wine in any way within 30 days, we will either replace it or give CorkHub credit. We will do our best to make make it right.
+<br><br>
+<b>Shipping Policy:</b><br>
+
+We only ship within California. The wine will be shipped and arrive at your door within 14 business days of the end of sale period. A person of 21 must be present to accept the shipment with a government issued ID.
+	</div>	
+	

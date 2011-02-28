@@ -155,7 +155,7 @@ an innovative online buying experience.
 		</td>
 	</tr>
 	<tr>
-		<td  style='font-size:17px;'  >
+		<td  style='font-size:13px;padding-right:10px'  >
 
 									<?php echo $products[0]->description;    ?>
 
@@ -164,7 +164,7 @@ an innovative online buying experience.
 	</tr>
 	
 	
-	
+	<!--
 	<tr>
 		<td    style='font-size:11px;' >
 			
@@ -172,7 +172,7 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 
 		</td>
 	</tr>
-	
+	  -->
 	
 	
 	
@@ -188,7 +188,7 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 		<td  style='font-size:17px;' >
 			
 
-	<b>RETAIL PRICE:  $40</b>
+	<b>RETAIL PRICE:  $<?php echo $products[0]->price;    ?></b>
 
 		</td>
 		
@@ -199,7 +199,7 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 	<tr>
 		<td  style='font-size:17px;' >
 			
-<b>LOWEST PRICE ONLINE:</b><span  style='color:red'  ><b> $33</b></span>
+<b>LOWEST PRICE ONLINE:</b><span  style='color:red'  ><b> $28.99</b></span>
 		</td>
 		
 		
@@ -210,7 +210,7 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 	<tr>
 		<td  style='font-size:34px;color:#8DB445;padding-top:11px' >
 			
-<b>OUR PRICE: $28.40</b>
+<b>OUR PRICE: $<?php echo $products[0]->discount;    ?></b>
 
 		</td>
 		
@@ -222,7 +222,7 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 	<tr>
 		<td  style='padding-top:2px;font-size:15px;'   >
 			
-(2 Bottle Minimum Special: $56.80)
+(2 Bottle Minimum Special: $<?php echo ($products[0]->discount * 2);    ?>)
 		</td>
 	</tr>	
 	

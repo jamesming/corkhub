@@ -29,21 +29,21 @@ Ext.onReady(function () {
     	PinotNoir:[new Wine({
  			   indexId: 0,
  			   CharacteristicKind: "Characteristic",
- 			   CharacteristicValue: 35,
- 			   CharacteristicKeyword: "Complex",
- 			   CharacteristicDescription: "Full flavored, rich and firmly structured beverage",
+ 			   CharacteristicValue: 25,
+ 			   CharacteristicKeyword: "Balanced",
+ 			   CharacteristicDescription: "Gracefully balanced and remarkably structured",
  			   AromaKind: "Aroma",
- 			   AromaValue: 25,
- 			   AromaKeyword: "Spice",
- 			   AromaDescription: "Cherries, trees and baking spice dominate the aroma",
+ 			   AromaValue: 40,
+ 			   AromaKeyword: "Black Fruit",
+ 			   AromaDescription: "A nose of black cherries, hibiscus, tobacco and leather",
  			   SensationKind: "Sensation",
- 			   SensationValue: 10,
- 			   SensationKeyword: "Long finish",
- 			   SensationDescription: "Mild acidities and elegance flow throoughout this amazing wine",
+ 			   SensationValue: 15,
+ 			   SensationKeyword: "Elegant",
+ 			   SensationDescription: "Beautifully versatile and seductive until the last drop",
  			   FlavorKind: "Flavor",
- 			   FlavorValue: 30,
- 			   FlavorKeyword: "Red Fruit",
- 			   FlavorDescription: "Sweet hints of berries, cherries and plums roam from beginning to finish"
+ 			   FlavorValue: 20,
+ 			   FlavorKeyword: "Juicy",
+ 			   FlavorDescription: "An approachable mixture of sweet fruit, cranberries and wild plum"
  		})],
  		Merlot:[new Wine({
 			   indexId: 1,
@@ -210,7 +210,7 @@ Ext.onReady(function () {
 	}
  
 	//MODIFY THIS LINE: enter the count down date using the format year/month/day
-    countdown(2011, 2, 28);
+    countdown(2011, 3, 7);
 
 
 });

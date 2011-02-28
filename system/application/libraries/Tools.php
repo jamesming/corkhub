@@ -74,7 +74,11 @@ function Tools(){
  * @return bool   */  
 	
 	function browserIschrome(){
-		return(eregi("chrome", $_SERVER['HTTP_USER_AGENT']));
+		if (isset($_SERVER['HTTP_USER_AGENT']) && 
+		(strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== false))
+			return TRUE;
+		else
+			return FALSE;
 	}
 
 /**

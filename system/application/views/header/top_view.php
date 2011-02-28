@@ -29,6 +29,9 @@
 								color:white;
 								text-align:right;
 								' >
+								<!--
+								<input   name="" id=""  value="Join our mailing list!"   style='background:url(<?php  echo base_url()   ?>images/inputbg.gif) no-repeat; font-size:17px; color:#cacaca; width:260px; height:23px; padding:2px 3px 10px 4px'  >
+								  -->
 								
 								<a href='http://unbouncepages.com/corkhub/'  target='_blank' style='color:lightgray; font-size:16px'  >Join our mailing list!</a>
 								

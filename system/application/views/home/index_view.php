@@ -188,7 +188,7 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 		<td  style='font-size:17px;' >
 			
 
-	<b>RETAIL PRICE:  $<?php echo $products[0]->price;    ?></b>
+	<b>RETAIL PRICE:  $<?php echo $products[0]->price;    ?>  for three</b>
 
 		</td>
 		

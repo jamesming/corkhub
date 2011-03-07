@@ -223,7 +223,9 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 	<tr>
 		<td  style='padding-top:2px;font-size:15px;'   >
 			
-(2 Bottle Minimum Special: $<?php echo ($products[0]->discount * 3);    ?>)
+(3 Bottle Minimum Special: $79.50<?php
+// echo ($products[0]->discount * 3);    
+?>)
 		</td>
 	</tr>	
 	

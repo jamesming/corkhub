@@ -25,26 +25,26 @@ Ext.onReady(function () {
 	            ]
 	});
  
-    var wines = {
-    	PinotNoir:[new Wine({
- 			   indexId: 0,
- 			   CharacteristicKind: "Characteristic",
- 			   CharacteristicValue: 25,
- 			   CharacteristicKeyword: "Balanced",
- 			   CharacteristicDescription: "Gracefully balanced and remarkably structured",
- 			   AromaKind: "Aroma",
- 			   AromaValue: 40,
- 			   AromaKeyword: "Black Fruit",
- 			   AromaDescription: "A nose of black cherries, hibiscus, tobacco and leather",
- 			   SensationKind: "Sensation",
- 			   SensationValue: 15,
- 			   SensationKeyword: "Elegant",
- 			   SensationDescription: "Beautifully versatile and seductive until the last drop",
- 			   FlavorKind: "Flavor",
- 			   FlavorValue: 20,
- 			   FlavorKeyword: "Juicy",
- 			   FlavorDescription: "An approachable mixture of sweet fruit, cranberries and wild plum"
- 		})],
+var wines = {
+      PinotNoir:[new Wine({
+                         indexId: 0,
+                         CharacteristicKind: "Characteristic",
+                         CharacteristicValue: 25,
+                         CharacteristicKeyword: "Powerful",
+                         CharacteristicDescription: "Intense flavors and aromas exude from this firm wine",
+                         AromaKind: "Aroma",
+                         AromaValue: 40,
+                         AromaKeyword: "Toasted Oak",
+                         AromaDescription: "Rich aromas of cherries, plums, tobacco, licorice, and oak",
+                         SensationKind: "Sensation",
+                         SensationValue: 15,
+                         SensationKeyword: "Smooth",
+                         SensationDescription: "Very chewy with a long lingering finish",
+                         FlavorKind: "Flavor",
+                         FlavorValue: 20,
+                         FlavorKeyword: "Blackberries",
+                         FlavorDescription: "Abundant flavors of blackberry jam and plums with firm tannins"
+              })],
  		Merlot:[new Wine({
 			   indexId: 1,
 			   CharacteristicKind: "Characteristic",
@@ -210,7 +210,7 @@ Ext.onReady(function () {
 	}
  
 	//MODIFY THIS LINE: enter the count down date using the format year/month/day
-    countdown(2011, 3, 7);
+    countdown(2011, 3, 14);
 
 
 });

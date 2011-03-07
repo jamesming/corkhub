@@ -545,7 +545,7 @@ function product_upload_image_form(){
 
 
 /**
- * product_upload_image_form
+ * product_upload_image
  *
  * {@source }
  * @package BackEnd

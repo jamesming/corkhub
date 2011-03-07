@@ -164,6 +164,7 @@ function delete_from_table($table, $where_array){
  * @param string $table
  * @param string $primary_key
  * @param array $set_what_array
+ * @return string updated
  **/
 
 function update_table( $table, $primary_key, $set_what_array ){
@@ -173,6 +174,8 @@ function update_table( $table, $primary_key, $set_what_array ){
 	$set_what_array['updated'] = date('Y-m-d H:i:s'); 
 	
 	$this->db->update($table, $set_what_array); 
+	
+	return 'updated: ' . date('Y-m-d H:i:s');
 	
 }
 

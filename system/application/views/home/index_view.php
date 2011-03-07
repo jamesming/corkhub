@@ -199,7 +199,8 @@ Ph level:<?php echo $products[0]->ph;    ?>/Alcohol: <?php echo $products[0]->ac
 	<tr>
 		<td  style='font-size:17px;' >
 			
-<b>LOWEST PRICE ONLINE:</b><span  style='color:red'  ><b> $28.99</b></span>
+<!--<b>LOWEST PRICE ONLINE:</b><span  style='color:red'  ><b> $28.99</b></span>-->
+<b>Guaranteed Lowest Price Online</b>
 		</td>
 		
 		
